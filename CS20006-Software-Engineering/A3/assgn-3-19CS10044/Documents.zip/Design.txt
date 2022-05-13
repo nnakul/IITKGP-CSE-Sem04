@@ -1,0 +1,1148 @@
+
+
+DESIGN DOCUMENT   |   SOFTWARE ENGINEERING CS20006
+Nakul Aggarwal    |   19CS10044
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+[1] HIGH LEVEL DESIGN
+
+[1.1] Design Principles
+      The following design principles are adhered to in the HLD:
+
+        • Flexible & Extensible Design
+          – The design is flexible. That is, it is easy to change the changeable parameters (like base rate, 
+            load factor etc.) according to the needs of the application, by visiting appropriate source files. 
+            This not at all requires re-building of the library of classes.
+          – The design is very extensible. It is easy to add new behaviour (classes) wherever necessary
+            (like Booking Classes, 'Booking', 'Passenger', etc.).
+          – Adding new (or removing existing) classes in the 'BookingClass' polymorphic hierarchy is very easy.
+          – Extending the design of classes (like 'Booking' and 'Passenger') into polymorphic hierarchies is
+            possible without re-coding the entire existing application.
+        
+        • Minimal Design
+          – Only the required models and behaviours are coded. No extra classes are used.
+          – Less code, less error principle was followed.
+        
+        • Reliable Design
+          – Reliability is the priority. Everything works as designed and coded.
+          – Data members, methods and objects are made constant wherever possible.
+          – Parameters are appropriately defaulted wherever possible.
+        
+        • Testable Design
+          – Every class supports the output streaming operator for checking intermittent output if needed.
+          – Every class is tested thoroughly with an appropriate test application for its unit functionality.
+          – A wide range of scenarios, including the most fundamental ones, are formulated in the unit test
+            plans to ensure error-free working of the application.
+
+[1.2] Classes
+
+        • Class 'Station' HAS-A name.
+        
+        • Class 'Railways' is a singleton. The default parameters favor the construction of 'Railways' object
+          that models the "Indian Railways". Besides, it has additional functionality for the client who can 
+          use this application to build "Booking Systems" for other railways networks by passing appropriate 
+          parameters. This feature makes the application more flexible and universal.
+          The singleton instance of 'Railways' class is a constant object.
+        
+        • Class 'Date' HAS-A date, month and year. It has several public-static-constant data members that "contain"
+          information/data related to dates and calendars.
+        
+        • Class 'BookingClass' is extended into a polymorphic hierarchy of booking classes. All concrete booking classes
+          at the leaves of the hierachy tree are implemented as singletons.
+          Class 'BookingClass' HAS-A load factor, name, number of tiers, categories (AC/non-AC, ordinary/luxury, seat/berth)
+          and remarks. Some of the attributes are encoded on the methods in the hierarchy classes. Others are kept explicitly
+          as data members.
+          All the concrete booking classes have a static constant data member to store the load factor of the class.
+          The singleton instance of every concrete booking-class is a constant object.
+        
+        • Class 'Passenger' HAS-A name, adhaar card number, date of birth, gender, category, mobile number.
+        
+        • Class 'Booking' HAS-A station for departure, station for arrival, date of travel, and bookingClass from the booking 
+          request where every station name, date and booking class are assumed to have been given correctly. Further it HAS-A
+          fare computed and PNR allocated. It HAS-A booking-status which is always true in this version and booking-message 
+          (which is always “BOOKING SUCCEEDED” for this version).
+          Booking supports 'Passenger' as a null-able parameter.
+        
+
+[1.3] Interfaces
+
+        [1.3.1] Constructors
+                • Proper constructors are written for every class.
+                • Constructors are made private for the singleton classes and public for others.
+                • Default parameters are provided wherever possible.
+                • Copy constructor is written for all classes that are not singletons.
+        
+        [1.3.2] Destructors
+                • Proper destructors are written for every class.
+                • Destructors are made private for the singleton classes and public for others.
+                • Destructors of the base classes must be accessible to the derived classes, so they are either
+                  kept protected or public.
+                • In order to enable dynamic dispatch of destructors in a polymorphic hierarchy and prevent "object-
+                  slicing", destrutors in the base class(es) of polymorphic hierarchies are made "virtual".
+
+        [1.3.3] Copy Assignment Operator
+                • Copy Assignment Operator (=) is overloaded for all classes that are not singletons.
+                • For singleton classes (classes in Booking Class hierachy and 'Railways' class), copy 
+                  asssignment operator is blocked.
+        
+        [1.3.4] Output Streaming Operator
+                • Output streaming operator is provided for every class to help output process as well as debugging.
+                • The state of every user-defined data type is printed in a neat format by this operator.
+        
+        [1.3.5] Relational Operators (==, !=)
+                • Overloaded relational operators ('==', '!=') are provided in some classes ('Station', 'Date') to help
+                  in variety of checks in the unit tests of classes like in 'BookingClass' hierarchy, 'Passenger', 
+                  'Booking' etc.
+
+        [1.3.6] Member Functions
+                • Class 'Station' has GetName() for accessing its name and GetDistance(.) to get distance to another
+                  station.
+                • Class 'Railways' has GetDistance(.,.) to get distance between a pair of stations. It also has a
+                  proper interface, for making it a singleton IndianRailways or some other custom railways, in the
+                  static member function Railways::SpecialRailways(.,.).
+                • Class 'BookingClass' has GetLoadFactor(), GetName(), IsSitting(), IsAC(), GetNumberOfTiers(),
+                  and IsLuxury() to get access to various BookingClass properties. All these methods are polymorphic
+                  in order to enable dynamic binding.
+                  Pure virtual functions IsSitting() and GetNumberOfTiers() are overridden in appropriate levels of
+                  hierarchy. 
+                  Each concrete class in this polymorphic hierarchy has proper interface, for making it a singleton,
+                  in the static member function SpecialBookingClass (qualified by the name of any concrete class in 
+                  the hierarchy).
+                • Class 'Booking' has ComputeFare() to implement the fare computation logic. It is made virtual for
+                  future extension.
+
+[1.4] Statics (non-const)
+        
+        • Class 'Railways' has sStations (list of stations) and sDistStations (distance between stations) that store the
+          attributes of the singleton instance, once it is constructed.
+        • Class 'Booking' has sBookings (list of bookings done) and sBookingPNRSerial (next available PNR).
+
+[1.5] Static-Constants
+        
+        • Class 'Date' has sMonthNames (contains the names of the months) and sDayNames (contains names of the weekdays).
+        • Class 'BookingClass' has sLoadFactors (contains the load factors of all the concrete booking-classes).
+        • Class 'Booking' has sBaseFarePerKM (Rs. 0.50/km), sACSurcharge (Rs. 50.00), and sLuxuryTaxPercent (25% on booking 
+          amount) storing appropriate values.
+        • Load Factors of various concrete booking-classes in the "Polymorphic Booking Class Hierarchy" are also declared as
+          static-constants.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+[2] LOW LEVEL DESIGN
+
+[2.1]   Design Principles
+
+        • Encapsulation
+          – Maximized encapsulation for every class
+          – Private access-specifier used for all data members that are not needed by derived classes, if any. 
+            Otherwise, protected access-specifier is used.
+          – Public access specifier is used for interface methods and static constants and friend functions only.
+
+        • Const-ness 
+          – All those static data members are made constant that are not changed after every instantiation of the class.
+          – Member functions are made 'const' wherever possible.
+        
+        • STL Containers
+          – STL containers (like vector, map etc.) and their iterators are used. Do not use arrays.
+          – Iterators are used STL containers rather than using bare "for" loops.
+        
+        • Pointers & References
+          – Use of dynamically allocated objects is minimized.
+          – 'const' references are used wherever possible.
+        
+        • Naming Conventions
+          – Used CamelCase for naming variables, classes, types and functions
+          – Every name is indicative of its semantics
+          – Every variable starts with a lower case letter
+          – Every function and class name starts with an upper case letter
+          – A trailing underscore (_) is used for every non-static data member
+          – A leading ’s’ is used for every static data member
+        
+        • Readability
+          – To increase the readability of the code, brief comments are written at several places.
+          – Code is properly indented, with proper spacing wherever necessary.
+        
+        • Flexibility and Extensibility
+          – The design is very extensible. It is easy to add new behaviour (classes) wherever necessary
+            (like Booking Classes, 'Booking', 'Passenger', etc.).
+          – Adding new (or removing existing) classes in the 'BookingClass' polymorphic hierarchy is very easy.
+          – Extending the design of classes (like 'Booking' and 'Passenger') into polymorphic hierarchies is
+            possible without re-coding the entire existing application.
+          – Additional features are added to some classes to make them more user-friendly and open to more
+            versatile applications (all these features are well-documented in this file).
+
+
+[2.2]   Object Oriented Design -- Design of Classes, Data Members and Methods
+
+        [2.2.1]   Station
+                
+                •   Attributes
+                    ○ 'Station' class has only one attribute/data member -- Station::name_ .
+                    ○ Station::name_ is a non-static non-const private data member that stores the name of the station.
+                    ○ Station::name_ is implemented as a 'string' data type provided by the header file <string>.
+                
+                •   Constructors
+                    ○ 'Station' class has a public constructor that takes a 'string' object as an arguement and constructs a new instance 
+                      of 'Station' class with name same as the arguement.
+                    ○ The 'string' object is passed as a 'const reference' to avoid copying overheads. 'const' reference ensures that the
+                      "actual" parameter stays intact after the constructor returns.
+                    ○ Constructors can neither have a return type nor can they be 'const' methods.
+                    ○ Signature --  Station::Station ( const string & )
+
+                    ○ 'Station' has a public copy constructor that takes a source 'Station' instance as an arguement and constructs a new
+                      instance of 'Station' Class with state (name) same as the arguement.
+                    ○ The 'Station' object is passed as a 'const reference' to avoid an infinite loop stuck in the copy constructor. If the
+                      parameter is passed by value, the passed object will have to be copied to the local arguements and will in turn call
+                      the copy constructor; leading to an indefinite sequence of calls to the copy constructor.
+                    ○ The source 'Station' instance is passed as a 'const' reference so as to ensure that the state of the "actual" parameter
+                      stays intact after the constructor returns.
+                    ○ Constructors can neither have a return type nor can they be 'const' methods.
+                    ○ Signature --  Station::Station ( const Station & )
+                
+                •   Operators
+                    ○ The class has a public copy assignment operator '=' that dictates the expression "s1 = s2" to copy the state of Station s2 to the
+                      state of the Station s1.
+                    ○ Signature -- Station & Station::operator = ( const Station & )
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Station' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Station' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "s1 = s2" and hence acts as a source whose state is copied.
+                    ○ Return type -- The return type 'Station &' is preferred over 'void' to support chained assignment operations like "s1 = s2 = s3".
+                      Had the return type been 'void', single assignment expressions like "s1 = s2" could still be possible but "s1 = s2 = s3" would
+                      become invalid because this expression attempts to copy return value "s2 = s3" to 's1'; since the former call to the operator method
+                       will return a 'void', it could not be copied to 's1'.
+                    ○ The return statement of this operator function must be "return *this ;" to enable chained assignment operations. This simply returns
+                      the instance as a member of which this method was called. The type of 'this' is 'Station * const' and hence for the return statement
+                      "return *this ;" the return type should be 'Station &'. The return is by 'reference'. This is again done to avoid any copying overheads.
+                      (NOTE : '*this' can be returned by reference because it is not a local non-static instance)
+                    
+                    ○ The class has a public relational equality operator '==' that dictates the expression "s1 == s2" to compare the two 'Station' instances
+                      (comapring 'Station::name_' of the two) 's1' and 's2' for equality. This returns true if the two are "equal" and false otherwise.
+                    ○ Signature -- bool Station::operator == ( const Station & ) const
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Station' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Station' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "s1 == s2", that is 's2'.
+                    ○ Return type -- A relational operator can only have a binary output, either true or false. Therefore 'bool' is a perfect choice
+                      for the return data type.
+                    ○ This is a 'const' method. This is depicted by the 'const' keyword after the right paranthesis. This ensures that the state of the
+                      object as a member of which this method is called (LHS entity in the expression "s1 == s2", that is 's1') remains intact/
+                      unaffected by this method.
+                    
+                    ○ The class has a public relational inequality operator '!=' that dictates the expression "s1 != s2" to compare the two 'Station' instances 
+                      (comapring 'Station::name_' of the two) 's1' and 's2' for inequality. This returns false if the two are "equal" and true otherwise.
+                    ○ Signature -- bool Station::operator != ( const Station & ) const
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Station' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Station' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "s1 != s2", that is 's2'.
+                    ○ Return type -- A relational operator can only have a binary output, either true or false. Therefore 'bool' is a perfect choice
+                      for the return data type.
+                    ○ This is a 'const' method. This is depicted by the 'const' keyword after the right paranthesis. This ensures that the state of the
+                      object as a member of which this method is called (LHS entity in the expression "s1 != s2", that is 's1') remains intact/
+                      unaffected by this method.
+
+                    ○ That class has an output streaming operator '<<' that dictates the expression "cout << s" to print the state of the 'Station'
+                      instance 's' to the console.
+                    ○ Signature -- ostream & operator << ( ostream & , const Station & )
+                    ○ Friendship -- This function is not a member function but rather a global function. It is a 'friend' of the 'Station' class and hence can
+                      access all the private/protected/public members of the class (breaks encapsulation), though here the class has only one private data member
+                      and other members are all public. 'Friendship' is ensured by the keyword 'friend', implemented in the form of 
+                      "friend ostream & operator << ( ostream & , const Station & ) ;" inside the class definition.
+                    ○ Parameters -- This operator method has two parameters. The first one is of output stream object 'ostream' type. The standard objects
+                      like 'std::cout' or 'std::cerr' are of this type. The LHS entity in the expression "cout << s" (that is, 'cout') is passed as the first
+                      parameter. This parameter is passed as a 'non-const reference'; 'non-const' because the state of the output-stream should be changed
+                      by the function when it inserts formatted output to that stream. The parameter is passed by 'reference' because it is imperitive to
+                      output the content/message on the same output-stream on which it is intended to by the expression "cout << s" in the caller function.
+                      The second arguement is of user-defined type 'Station' which is actually the RHS entity in the expression "cout << s" (that is, 's'). 
+                      It is passed by 'reference' to avoid copying overheads and that too as a 'const'-reference to ensure that the state of the "actual" 
+                      parameter is not changed by this function.
+                    ○ Return type -- The return type is 'ostream &'. The same stream that is passed as an arguement is returned to enable chained output
+                      streaming (like "cout << s1 << s2 << s3"). To ensure that the same stream is returned, the return is by 'reference'. It is a return by
+                      'non-const'-reference because the state of the returned output stream object might have to change in the caller function in case there
+                      is another instruction for formatted output chained with the former one. Return-by-reference is possible here because the returned output
+                      stream object is not a local object but rather the same object that was passed-by-reference as the first parameter.
+                
+                •   Methods
+                    ○ Signature --  string Station::GetName ( ) const
+                    ○ This is a public member function of this class that returns the name of the 'Station' instance (value of 'Station::name_' date member)
+                      on which this method is called.
+                    ○ Return type -- The data type of the data member 'Station::name_' is 'string' and therefore the return type must be 'string'.
+                    ○ This is a 'const' method. This ensures that the state of the 'Station' object as a member of which this method is called remains intact.
+
+                    ○ Signature --  int Station::GetDistance ( const Station & ) const
+                    ○ This is a public member function of this class that returns the distance of the 'Station' object on which this method is called from 
+                      the 'Station' object that is passed as an arguement.
+                    ○ Parameters -- This method has only one parameter that is of the user-defined 'Station' type. This is the 'Station' object from where
+                      the distance of the 'Station' object on which the method is called is to be returned. It is passed by 'reference' to avoid any copying
+                      overheads. Besides, it is passed as a 'const' reference to ensure that the state of the "actual" 'Station' object that is passed as the 
+                      arguement stays intact/unaffected by the method.
+                    ○ Return type -- The distance between any pair of stations is realised as a built-in 'int' data type that stands for distance in kilometers.
+                      Hence the return type is 'int'.
+                    ○ This is a 'const' method. This ensures that the state of the 'Station' object as a member of which this method is called remains intact. 
+                    ○ This method uses the function 'Railways::GetDistance(const Station&, const Station&) const' to get the distance between the two stations.
+                      First, 'Railways::SpecialRailways()' returns the only instance of the singleton class 'Railways'. If this call happens for the first time, 
+                      the singleton 'Railways' object is first constructed using the default parameters of "Indian Railways". 'Railways::SpecialRailways()' after 
+                      constructing the singleton 'Railways' instance with the default parameters, returns that.
+                      'Railways::GetDistance(const Station&, const Station&) const' function is called on this singleton 'Railways' instance that accesses
+                      the 'map' (i.e., private const 'map<pair<string, string>, int>' data structure attribute of the singleton 'Railways' object) storing the 
+                      pairwise distance between all the stations and returns the desired distance. So, the main function is being performed by the call 
+                      "Railways::SpecialRailways().GetDistance(*this, station)" in 'Station::GetDistance(const Station &) const'.
+                      NOTE : Detailed design of the 'Railways' class is discussed in section [2.2.3].
+                
+                •   Destructor
+                    ○ The class has a public destructor.
+                    ○ A destructor has no arguements or return type and neither can it be a 'const' member function.
+                    ○ Signature --  Station::~Station ( )
+                    ○ This is the method that is called whenever any instance of this class is destroyed, deleted or removed from the stack-frame.
+                    ○ None of the data members of a 'Station' instance are dynamically allocated and therefore there is no need to explicitly delete any
+                      dynamically allocated data in the destructor.
+            
+            
+            [2.2.2]   Date
+
+                •   Attributes
+                    ○ The class has three attributes / data members all which are private and of built-in type 'unsigned int'.
+                    ○ Date::date_ -- Stores the date (or what day of the month it is). Eg - a value of 5 means that the instance signifies the 5th day of a month.
+                    ○ Date::month_ -- Stores the month of the year (1-12). Eg - a value of 5 means that the instance signifies the 5th month (May) of the year.
+                    ○ Date::year_ -- Stores the year.
+                    ○ 'unsigned int' is appropriate for these attributes because these all are always strictly positive.
+                
+                •   Static Constant Data Members
+                    ○ The class has two public static constants. Both of them are implemented through standard 'vector' template provided by the header file 
+                      <vector>.
+                    ○ First one is a 'const' vector of string objects -- 'static const std::vector<std::__cxx11::string> Date::sMonthNames'. As the 
+                      name suggests, it stores the names of the 12 months in a year in order. It should be a static data member because this information is not 
+                      tethered to any specific instance of the 'Date' class but rather is shared by all the instances. This vector is especially used by the 
+                      'output-streaming-operator' for this class to get the name of the month corresponding to its serial number and print the date in an 
+                      appropriate format.
+                    ○ It should be a 'const' member because the stored information is constant. The template arguement for the vector is chosen to be 'string'
+                      that is provided by the header file <string>.
+                    ○ Second one is another 'const' vector of string objects -- 'static const std::vector<std::__cxx11::string> Date::sDayNames'. 
+                      As the name suggests, it stores the names of the 7 days of a week in order. It should be a static data member because this information is not 
+                      tethered to any specific instance of the 'Date' class but rather is shared by all the instances.
+                    ○ The type is exactly same as that of 'Date::sMonthNames'. It should be a 'const' member because the stored information is constant. The 
+                      template arguement for the vector is chosen to be 'string' that is provided by the header file <string>.
+                    ○ The information "contained" by these data structures comes in very handy for some date-related-tasks and should be kept public to enable 
+                      their use anywhere across the application.
+                    ○ To access the ith month of the year, use "Date::sMonthNames.at(i-1)" anywhere , where 'i' is of int/unsigned int type of value at least 1 
+                      and at most 12.
+                    ○ To access the ith day of the week, use "Date::sDayNames.at(i-1)" anywhere , where 'i' is of int/unsigned int type of value at least 1 
+                      and at most 7.
+                
+                •   Constructors
+                    ○ The class has a public constructor that takes date, month, year (in the same order) as arguements to construct a 'Date' object with this date.
+                    ○ Signature --    Date::Date(unsigned int = 1U, unsigned int = 1U, unsigned int = 1970U)
+                    ○ Constructors do not have a return type and neither can they be 'const' methods.
+                    ○ Parameters -- It has three arguements, all of which are of built-in type 'unsigned int'. This is an accurate choice for data type for none of
+                      the date, month and year can ever be negative. The first, second and third arguements are interpreted as day, month and year respectively.
+                    ○ Default values -- The day and month (first and second parameter respectively) have the default value of 1 and year (third parameter) has a
+                      default value of 1970. Due to default parameters each of the constructions, "Date d", "Date d(23)", "Date(17, 12)" are perfectly valid.
+                    ○ 'unsigned int' is a built-in type and therefore is passed by value.
+                
+                    ○ The class has a public copy constructor that takes a source 'Date' instance as arguement and constructs a new 'Date' instance with the same state
+                      (date i.e., day, month and year) as the source instance.
+                    ○ Signature --    Date::Date(const Date &)
+                    ○ Constructors do not have a return type and neither can they be 'const' methods.
+                    ○ Parameters -- It has one arguement which is of user-defined type 'Date'. It is passed by reference to avoid an infinite loop stuck in the copy 
+                      constructor. If the parameter is passed by value, the passed object will have to be copied to the local arguements and will in turn call
+                      the copy constructor; leading to an indefinite sequence of calls to the copy constructor. Besides, it is passed as a 'const' reference so that
+                      the state of the "actual" source 'Date' instance is not effected/tampered anywhere in the method.
+                
+                •   Operators
+                    ○ The class has a public copy assignment operator '=' that dictates the expression "d1 = d2" to copy the state (day, month and year) of Date d2
+                      to the state of the Date d1.
+                    ○ Signature -- Date & Date::operator = ( const Date & )
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Date' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Date' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "d1 = d2" and hence acts as a source whose state is copied.
+                    ○ Return type -- The return type 'Date &' is preferred over 'void' to support chained assignment operations like "d1 = d2 = d3".
+                      Had the return type been 'void', single assignment expressions like "d1 = d2" could still be possible but "d1 = d2 = d3" would
+                      become invalid because this expression attempts to copy value returned by "d2 = d3" to 'd1'; since the former call to the 
+                      operator method will return a 'void', it could not be copied to 'd1'.
+                    ○ The return statement of this operator function must be "return *this ;" to enable chained assignment operations. This simply returns
+                      the instance as a member of which this method was called. The type of 'this' is 'Date * const' and hence for the return statement
+                      "return *this ;" the return type should be 'Date &'. The return is by 'reference'. This is again done to avoid any copying overheads.
+                      (NOTE : '*this' can be returned by reference because it is not a local non-static instance)
+
+                    ○ The class has a public relational equality operator '==' that dictates the expression "d1 == d2" to compare the two 'Date' instances
+                      (compares Date::date_, Date::month_, Date::year_) 'd1' and 'd2' for equality. This returns true if the two are "equal" and false 
+                      otherwise.
+                    ○ Signature -- bool Date::operator == ( const Date & ) const
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Date' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Date' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "d1 == d2", that is 'd2'.
+                    ○ Return type -- A relational operator can only have a binary output, either true or false. Therefore 'bool' is a perfect choice
+                      for the return data type.
+                    ○ This is a 'const' method. This is depicted by the 'const' keyword after the right paranthesis. This ensures that the state of the
+                      object as a member of which this method is called (LHS entity in the expression "d1 == d2", that is 'd1') remains intact/
+                      unaffected by this method.
+                    
+                    ○ The class has a public relational inequality operator '!=' that dictates the expression "d1 != d2" to compare the two 'Date' instances 
+                      (compares Date::date_, Date::month_, Date::year_) 'd1' and 'd2' for inequality. This returns false if the two are "equal" and true 
+                      otherwise.
+                    ○ Signature -- bool Date::operator != ( const Date & ) const
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Date' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Date' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "d1 != d2", that is 'd2'.
+                    ○ Return type -- A relational operator can only have a binary output, either true or false. Therefore 'bool' is a perfect choice
+                      for the return data type.
+                    ○ This is a 'const' method. This is depicted by the 'const' keyword after the right paranthesis. This ensures that the state of the
+                      object as a member of which this method is called (LHS entity in the expression "d1 != d2", that is 'd1') remains intact/
+                      unaffected by this method.
+                    
+                    ○ That class has an output streaming operator '<<' that dictates the expression "cout << d" to print the state of the 'Date'
+                      instance 'd' to the console.
+                    ○ Signature -- ostream & operator << ( ostream & , const Date & )
+                    ○ Friendship -- This function is not a member function but rather a global function. It is a 'friend' of the 'Date' class and hence can
+                      access all the private/protected/public members of the class (breaks encapsulation), though here the class has only three private data 
+                      members and other members are all public. 'Friendship' is ensured by the keyword 'friend', implemented in the form of 
+                      "friend ostream & operator << ( ostream & , const Date & ) ;" inside the class definition .
+                    ○ Parameters -- This operator method has two parameters. The first one is of output stream object 'ostream' type. The standard objects
+                      like 'std::cout' or 'std::cerr' are of this type. The LHS entity in the expression "cout << d" (that is, 'cout') is passed as the first
+                      parameter. This parameter is passed as a 'non-const reference'; 'non-const' because the state of the output-stream should be changed
+                      by the function when it inserts formatted output to that stream. The parameter is passed by 'reference' because it is imperitive to
+                      output the content/message on the same output-stream on which it is intended to by the expression "cout << d" in the caller function.
+                      The second arguement is of user-defined type 'Date' which is actually the RHS entity in the expression "cout << d" (that is, 'd'). 
+                      It is passed by 'reference' to avoid copying overheads and that too as a 'const'-reference to ensure that the state of the 'Date'
+                      parameter is not changed by this function.
+                    ○ Return type -- The return type is 'ostream &'. The same stream that is passed as an arguement is returned to enable chained output
+                      streaming (like "cout << d1 << d2 << d3"). To ensure that the same stream is returned, the return is by 'reference'. It is a return by
+                      'non-const'-reference because the state of the returned output stream object might have to change in the caller function in case there
+                      is another instruction for formatted output chained with the former one. Return-by-reference is possible here because the returned output
+                      stream object is not a local object but rather the same object that was passed-by-reference as the first parameter.
+                    ○ This operator prints the date on the console in 'DD/MMM/YYYY' format. At the place of 'MMM', the first 3-letter substring of the month's
+                      name is used. For example, for a Date instance 'd' constructed as "Date d(5,8,2022);" the instruction "cout << d;" will print "05/Aug/2022" 
+                      on the console. Here, to get the name of the month from its serial number, the static constant data member Date::sMonthNames is used.
+                
+                •   Destructor
+                    ○ The class has a public destructor.
+                    ○ A destructor has no arguements or return type and neither can it be a 'const' member function.
+                    ○ Signature --  Date::~Date ( )
+                    ○ This is the method that is called whenever any instance of this class is destroyed, deleted or removed from the stack-frame.
+                    ○ None of the data members of a 'Date' instance are dynamically allocated and therefore there is no need to explicitly delete any
+                      dynamically allocated data in the destructor.
+              
+            
+            [2.2.3]   Railways
+
+                •   Attributes
+                    ○ The class has two private non-static data members both of which are 'const'.
+                    ○ The first one is a 'const' vector of 'Station' objects. This contains all the 'Station' objects that are a part of the 'Railways' network. 
+                      In the design it is assumed that no new 'Station' can be added to a 'Railways' and neither can the existing ones be just removed. 
+                      Therefore, it is apt to implement the "collection" of all the 'Station' objects constituting a particular 'Railways' instance as a 'const' 
+                      vector --   'const std::vector<Station> Railways::stations_' .
+                      (NOTE : 'vector' is a standard template provided by the header file <vector>. Here the template arguement is chosen to be 'Station'.)
+                    
+                    ○ The second one is a const-'map' which is again a standard template provided by the header file <map>. It is actually a standard container 
+                      made up of (key,value) pairs, which can be retrieved based on a key, in logarithmic time. This map is used to store the distance (in kilo-
+                      meters) against a pair of stations.
+                      'const std::map <std::pair<std::__cxx11::string, std::__cxx11::string>, int> Railways::distStations_'
+                    ○ About "key" -- The data structure/type for the 'key' of a 'map' is passed as its first template parameter. The key chosen here is a 'pair'
+                      which is another standard template class. The 'pair' container is a simple container defined in <utility> header consisting of two data 
+                      elements or objects. The first element of a 'pair' is referenced as 'first' and the second element as 'second' and the order is fixed --
+                      (first, second). To implement a 'pair', two template parameters have to be passed. The first one takes care of the data type of the 'first'
+                      element and the second one takes care of the data type of the 'second' element of the 'pair'.
+                      Here a homogenous 'pair' of data type 'string' is used (provided by <string> header). A pair of strings depicts a pair of names of the two
+                      terminal stations. The key could have been 'std::pair<Station, Station>' instead of 'std::pair<std::__cxx11::string, std::__cxx11::string>'
+                      for a more direct approach. But, given a 'Station' object; its name (Station::name_) can be easily obtained by the public member function
+                      'Station::GetName' .
+                    ○ About "value" -- The data structure/type for the 'value' of a 'map' is passed as its second template parameter. In this case, the 'value'
+                      of a 'key' in the map signifies the distance (in kilometers) between the stations that have their names as the first and the second element
+                      of the 'key' that is implemented by a 'pair' container. The distances are taken as rounded off integers and therefore the data type of the
+                      second template parameter is chosen to be of built-in type 'int'.
+                    ○ For the design it was assumed that for a 'Railways' instance, neither can any new stations be added, nor can the existing ones be removed, 
+                      nor can the distance between any of the existing stations change. Under this assumption, it is apt to make 'Railways::distStations_' a 
+                      'const' data member.
+                
+                •   Singleton Class
+                    ○ The 'Railways' class is implemented as a 'singleton' class. That is, one and only one instance of the 'Railways' class can be constructed.
+                      This is realised as a "Meyer's implementation of a singleton".
+                    ○ Therefore, the constructor is kept private and a public member function 'Railways::SpecialRailways' is used in the interface to "get" the
+                      singleton instance of the Railways class.
+                
+                •   Static Data Members
+                    ○ The class has two private static data members 'Railways::sStations' and 'Railways::sDistStations' which are actually analogous to the non-static
+                      data members 'Railways::stations_' and 'Railways::distStations_' respectively.
+                    ○ Since the class is a singleton class, the entire class stands for only one instance and therefore the data members that define the state of that
+                      instance can also be stored in the static data members. This reflects the notion that the attributes of the singleton object represent the whole
+                      class rather than just being tethered to that one instance.
+                    
+                    ○ The only difference between 'Railways::sStations' and 'Railways::stations_' is that the former is 'static non-const' while the latter is 'non-
+                      static const'. Other than this, the data type of both of them is 'std::vector<Station>'.
+                    ○ 'Railways::sStations' has to be non-const because unless the first (and the only) instance of the 'Railways' class is initialized, there is no
+                      relevant information to store in 'Railways::sStations'. If this is declared as a 'static const' instead, then once it is initialized with some 
+                      placeholder value, it cannot be changed when the singleton instance of 'Railways' is constructed. Therefore, it is declared as a static non-const
+                      and assigned some arbitrary value (an empty vector) until the 'Railways' constructor is called (happens only once) and its value is changed to
+                      the same value as that of the data member 'Railways::stations_' of the singleton object.
+                    
+                    ○ The only difference between 'Railways::sDistStations' and 'Railways::distStations_' is that the former is 'static non-const' while the latter 
+                      is 'non-static const'. Other than this, the data type of both of them is 'std::map<std::pair<std::__cxx11::string, std::__cxx11::string>, int>'.
+                    ○ 'Railways::sDistStations' has to be non-const because unless the first (and the only) instance of the 'Railways' class is initialized, there is no
+                      relevant information to store in 'Railways::sDistStations'. If this is declared as a 'static const' instead, then once it is initialized with some 
+                      placeholder value, it cannot be changed when the singleton instance of 'Railways' is constructed. Therefore, it is declared as a static non-const
+                      and assigned some arbitrary value (an empty map) until the 'Railways' constructor is called (happens only once) and its value is changed to
+                      the same value as that of the data member 'Railways::distStations_' of the singleton object.
+
+                •   Constructor
+                    ○ The class has a private constructor that takes two arguements -- a vector and a map. 
+                    ○ Signature --    'Railways::Railways(const std::vector<Station> &, const std::map<std::pair<std::__cxx11::string, std::__cxx11::string>, int> &)'
+                    ○ A constructor does not have a return type and neither can it be a 'const' method.
+                    ○ The first parameter is used to initialize the data member 'Railways::stations_' in the initializer list (because this data member is a 'const')
+                      and the static data member 'Railways::sStations' in the body. It is passed as a reference to avoid expensive copying overhead. It is passed as
+                      a 'const' reference to ensure that the constructor does not effect the value of the "actual" arguement.
+                    ○ The second parameter is used to initialize the data member 'Railways::distStations_' in the initializer list (because this data member is a 'const')
+                      and the static data member 'Railways::sDistStations' in the body. It is passed as a reference to avoid expensive copying overhead. It is passed as
+                      a 'const' reference to ensure that the constructor does not effect the value of the "actual" arguement.
+                    ○ It is important to keep the constructor private otherwise an instance of the 'Railways' class can be constructed anywhere, any number of times
+                      thus violating its "singleton" property.
+                
+                •   Static Member Functions
+                    ○ The class has a public static member function that acts as an interface between the private constructor and the global scope. 
+                    ○ Signature --    'static const Railways & Railways::SpecialRailways ( 
+                                                      const std::vector<Station> & = {  Station("Mumbai") , Station("Delhi") ,
+                                                                                        Station("Bangalore") , Station("Kolkata") , Station("Chennai") } , 
+                                                      const std::map<std::pair<std::__cxx11::string, std::__cxx11::string>, int> & = {
+                                                                                                                                        { {"Delhi", "Mumbai"}, 1447 } ,
+                                                                                                                                        { {"Bangalore", "Mumbai"}, 981 } ,
+                                                                                                                                        { {"Kolkata", "Mumbai"}, 2014 } ,
+                                                                                                                                        { {"Chennai", "Mumbai"}, 1338 } ,
+                                                                                                                                        { {"Bangalore", "Delhi"}, 2150 } ,
+                                                                                                                                        { {"Delhi", "Kolkata"}, 1472 } ,
+                                                                                                                                        { {"Chennai", "Delhi"}, 2180 } ,
+                                                                                                                                        { {"Bangalore", "Kolkata"}, 1871 } ,
+                                                                                                                                        { {"Bangalore", "Chennai"}, 350 } ,
+                                                                                                                                        { {"Chennai", "Kolkata"}, 1659 }    } )'
+                  ○ This method has the same arguements as the constructor, except that here default values of the arguements are also given. When 'Railways::SpecialRailways'
+                    is called for the first time, the singleton object is constructed and every next call to 'Railways::SpecialRailways' results with the same object 
+                    being returned. 
+                  ○ A static Railways object is constructed in this method. This is a singleton because static storage duration for a function local means that only one instance 
+                    of that local exists in the program. This singleton instance is returned everytime a 'Railways::SpecialRailways()' call is made. The return is by reference
+                    because  Railways is a singleton class and any copy of the singleton instance will violate this property. Moreover, it is returned as a 'const' reference
+                    because the singleton 'Railways' object that is returned to the caller function must be treated as a constant object.
+                    Note that return by reference is possible here because the returned object is not a local non-static object but rather a local static object which is not
+                    allocated on the stack frame.
+                  ○ The default parameters are selected based on the "Master Data" given in the assignment. The default arguements realize a small network of Indian Railways with
+                    5 stations. The first parameter ('const std::vector<Station> &') stores the 'Station' objects constituting the railways network and the second parameter
+                    ('const std::map<std::pair<std::__cxx11::string, std::__cxx11::string>, int> &') stores the pairwise distance between all the stations in the form of a map.
+                  ○ The first parameter is passed as a reference to avoid expensive copying overhead. It is passed as a 'const' reference to ensure that the value of the 
+                    "actual" arguement is not effected in the caller function.
+                  ○ The second parameter is also passed as a reference to avoid expensive copying overhead. It is passed as a 'const' reference to ensure that the value of the 
+                    "actual" arguement is not effected in the caller function.
+                  ○ These two parameters are ultimately used in constructing the singleton object of the class. Note that it is only the arguements passed in the first call to 
+                    'Railways::SpecialRailways' that matters; in all the subsequent calls irrespective of what arguements are passed, the state of the singleton object cannot
+                    be revised. If the first call is without arguements, the default parameters will be used to construct the singleton instance. Now even if in the next call
+                    any arguements are passed, the data members of the singleton instance will stay intact. This is because the singleton object is declared as a 'static' inside
+                    this method, which can be constructed no more than once.
+
+                •   Non-Static Member Functions
+                    ○ The class has a public non-static member function that takes two 'Station' objects as input and returns the distance between them (in kilometers).
+                    ○ Signature --  'int Railways::GetDistance(const Station &, const Station &) const'
+                    ○ Parameters -- This method has two parameters, both of which are of the user defined type 'Station'. Both of them are passed by reference to avoid any
+                      copying overheads. Besides, they are passed as 'const' reference so that the state of the actual arguements that are passed does not get effected/
+                      changed by this method. The method is a "mathematically-symmetric" function. That means that for any two Station objects, 's1' and 's2', it does not
+                      really matter in which order the arguements are passed (value returned by 'Railways::GetDistance(s1,s2)' is same as that returned by 
+                      'Railways::GetDistance(s2,s1)'). The two parameters actually are the two terminal stations in the 'Railways' between which the distance is to be 
+                      returned by this method.
+                    ○ Return type -- The distance between any two stations is realized as an 'int'. Hence, the return type is 'int'.
+                    ○ This is a 'const' method. This is necessary because the only way the singleton object of 'Railways' class can be obtained is by the call to the function
+                      'Railways::SpecialRailways', which returns a 'const' reference to the singleton object. On a 'const' instance of a class, only 'const' member functions can be
+                      called. Therefore, if the member function 'Railways::GetDistance' is non-const, the call 'Railways::SpecialRailways().GetDistance(s1,s2)' will be illegal.
+                    ○ Algorithm -- Given the two stations, first their names are obtained by the public method 'Station::GetName'. Now the two names can have two permutations as a 
+                      'pair' and out of these two, only one will be present in the map ('Railways::distStations_') as a key. So both the possible pairs are checked.
+                      Given a 'pair<string, string>' object 'p', if "distStations_.find(p) == distStations_.end()" stands for true, then this pair 'p' is not present as a key.
+                      If its other permutation 'q' of same type is now checked and "distStations_.find(q) == distStations_.end()" stands for false, then this pair 'q' is present as a 
+                      key. In this case, "return distStations_.at(q);" will return the value corresponding to this key in the map. 
+                      Otherwise if "distStations_.find(q) == distStations_.end()" stands for true, then the distance between the two terminal stations is not available in the 
+                      map and an arbitrary value (-1) is returned.
+
+                •   Operators
+                    ○ That class has an output streaming operator '<<' that dictates the expression "cout << r" to print the information of the 'Railways'
+                      instance 'r' to the console.
+                    ○ Signature -- ostream & operator << ( ostream & , const Railways & )
+                    ○ Friendship -- This function is not a member function but rather a global function. It is a 'friend' of the 'Railways' class and hence can
+                      access all the private/protected/public members of the class (breaks encapsulation). 'Friendship' is ensured by the keyword 'friend', 
+                      implemented in the form of "friend ostream & operator << ( ostream & , const Railways & ) ;" inside the class definition .
+                    ○ Parameters -- This operator method has two parameters. The first one is of output stream object 'ostream' type. The standard objects
+                      like 'std::cout' or 'std::cerr' are of this type. The LHS entity in the expression "cout << r" (that is, 'cout') is passed as the first
+                      parameter. This parameter is passed as a 'non-const reference'; 'non-const' because the state of the output-stream should be changed
+                      by the function when it inserts formatted output to that stream. The parameter is passed by 'reference' because it is imperitive to
+                      output the content/message on the same output-stream on which it is intended to by the expression "cout << r" in the caller function.
+                      The second arguement is of user-defined type 'Railways' which is actually the RHS entity in the expression "cout << r" (that is, 'r'). 
+                      It is passed by 'reference' because it does not have a copy constructor (not required for a singleton class). It is passed as a 'const' 
+                      reference because the only way the singleton object of 'Railways' class can be obtained is by the call to the function --
+                      'Railways::SpecialRailways', which returns a 'const' reference to the singleton object. This 'const' reference cannot be converted to a
+                      non-const reference.
+                    ○ Return type -- The return type is 'ostream &'. The same stream that is passed as an arguement is returned to enable chained output
+                      streaming (like "cout << r << r << r"). To ensure that the same stream is returned, the return is by 'reference'. It is a return by
+                      'non-const'-reference because the state of the returned output stream object might have to change in the caller function in case there
+                      is another instruction for formatted output chained with the former one. Return-by-reference is possible here because the returned output
+                      stream object is not a local object but rather the same object that was passed-by-reference as the first parameter.
+                    ○ This operator prints (1.) the list of all the 'Station' objects (uses 'ostream & operator << ( ostream & , const Station & )') that are a part
+                      of the 'Railways', basically all the elements in the 'Railways::stations_' attribute of the singleton object; (2.) the pairwise distance between
+                      all the stations that is stored in the 'Railways::distStations_' attribute of the singleton object.
+                    
+                    ○ In the 'Railways' class, the copy assignment operator '=' is blocked by declaring it in the private section of the class definition. This is 
+                      because for a'singleton' class, a copy of the "only" instance can lead to a contradiction to the concept of "no more than one instances".
+                
+                •   Destructor
+                    ○ This class has a private destructor.
+                    ○ Signature --      'Railways::~Railways ( )'
+                    ○ Destructors have no arguements, return type and neither can they be 'const' methods.
+                    ○ 'Railways' class is a 'singleton' class and the only instance of this class is of 'static' type. When a variable is declared as static, space for it gets 
+                      allocated for the lifetime of the program. Therefore, the singleton 'Railways' instance is not "destructed" until the program gets terminated.
+                    ○ It is a good idea to make a destructor of a 'singleton' class private because then the client/application code won't call the destructor by accident. 
+                      Calling the destructor would cause the singleton to fail for all applications in the project as the instance would become invalid.
+                
+
+            [2.2.4]   Booking Classes Polymorphic Hierarchy
+
+                •   Polymorphic Hierarchy
+                                                        |-  BookingClass
+                                                            |-  BookingClassSeat
+                                                                |-  BookingClassSeatNoTier
+                                                                    |-  BookingClassSeatNoTierACOrdinary*
+                                                                    |-  BookingClassSeatNoTierNonACOrdinary*
+                                                            |-  BookingClassBerth
+                                                                |-  BookingClassBerthDoubleTier
+                                                                    |-  BookingClassBerthDoubleTierACLuxury*
+                                                                    |-  BookingClassBerthDoubleTierACOrdinary*
+                                                                    |-  BookingClassBerthDoubleTierNonACLuxury*
+                                                                |-  BookingClassBerthTripleTier
+                                                                    |-  BookingClassBerthTripleTierACOrdinary*
+                                                                    |-  BookingClassBerthTripleTierNonACOrdinary*
+                    (* -> concrete class)
+                    ○ The above organizational chart summarizes the polymorphic hierarchy of the booking classes.
+                    ○ It is desired that each concrete class must be a singleton class (like 'Railways'). This is only possible if for each set of properties, a seperate
+                      concrete booking class is present.
+                    ○ The above booking class hierarchy is rooted at the abstract class 'BookingClass'. The first level of inheritance is done on the basis of if the booking
+                      class is of seat-type or berth-type. This is an essential attribute of a booking class and therefore the very first single-inheritance is done based on that.
+                      Hence, the abstract classes 'BookingClassSeat' and 'BookingClassBerth' are derived from the root class 'BookingClass'. 
+                    ○ The second level of inheritance is based on the number of tiers, which is the second most important attribute of a booking class. Therefore, each one of the
+                      two booking classes in the previous level are specialized to the abstract booking classes in this level on the basis of the number of tiers. So, the abstract
+                      classes 'BookingClassBerthDoubleTier' and 'BookingClassBerthTripleTier' are derived from 'BookingClassBerth'; and 'BookingClassSeatNoTier' is derived from
+                      'BookingClassSeat'.
+                    ○ The last level of inheritance tree specializes the classes in the previous level on the basis of the "weaker" properties of a booking class, that
+                      are (1.) if the booking class is AC and (2.) if the booking class is luxury.
+                      The classes on this level are the leaves of the inheritance structure/tree and are well-defined as concrete classes whose objects can be instantiated.
+                      Here, all the classes now exist in the most "specialized" forms and therefore can be implemented as 'singleton' classes.
+                      
+                •   Attributes
+                    ○ The root abstract class 'BookingClass' has 4 'protected' data members.
+                    ○ 'BookingClass::name_' stores the name of the booking class in a 'string' data type (declared in <string> header).
+                    ○ 'BookingClass::remarks_' stores the remarks or some comments for the booking class in a 'string' data type.
+                    ○ 'BookingClass::loadFactor_' stores the load factor of the booking class in a built-in type 'double'.
+                    ○ 'BookingClass::isLuxury_' stores a 'bool' value to signify if the booking class is luxury or not (ordinary).
+                    ○ 'BookingClass::isAC_' stores a 'bool' value to signify if the booking class has AC or not.
+                    ○ All these data members are 'protected' because they should be accessible to the derived/inherited classes. 'protected' access specifier acts like a 'private'
+                      outside the hierarchy and as 'public' inside the hierarchy.
+                    ○ Besides, 'BookingClass' has a public static-const 'double' vector ('BookingClass::sLoadFactors') that stores the load-factors of all the booking classes (with 
+                      repetition allowed). This data member serves as a summary of load factors of various booking classes, like how many booking classes have load factor more 
+                      than 1.5 or how many classes have a load factor of 2 or what is the average load factor. Without this data member, one will have to first construct the singleton 
+                      objects of all the 7 concrete booking classes and then use the method 'BookingClass::GetLoadFactor' on each one of them, just to do these simple analytics.
+                      (NOTE : 'vector' is a standard template class declared in <vector> header)
+                
+                •   Member Functions
+                    ○ The root abstract class 'BookingClass' has a member function 'double BookingClass::GetLoadFactor() const' that returns the load factor (value of 
+                      BookingClass::loadFactor_) of a booking class. The return type is 'double' to match the type of the data member 'BookingClass::loadFactor_' and the
+                      method is a 'const' method that ensures that the state of the instance of any of the concrete booking classes as a member of which this method is
+                      called stays intact. This member function is declared as a 'virtual' function to enable dynamic linkage or late binding on the function which is especially
+                      important in a polymorphic hierarchy.
+                    
+                    ○ The root abstract class 'BookingClass' has a member function 'string BookingClass::GetName() const' that returns the name (value of BookingClass::name_) 
+                      of a booking class. The return type is 'string' to match the type of the data member 'BookingClass::name_' and the method is a 'const' method that 
+                      ensures that the state of the instance of any of the concrete booking classes as a member of which this method is called stays intact. This member 
+                      function is declared as a 'virtual' function to enable dynamic linkage or late binding on the function which is especially important in a 
+                      polymorphic hierarchy.
+
+                    ○ The root abstract class 'BookingClass' has a member function 'bool BookingClass::IsLuxury() const' that returns the value of BookingClass::isLuxury_ 
+                      for a booking class, that is returns true if the booking class is luxury and false if it is ordinary. The return type is 'bool' to match the type of the data 
+                      member 'BookingClass::isLuxury_' and the method is a 'const' method that ensures that the state of the instance of any of the concrete booking 
+                      classes as a member of which this method is called stays intact. This member function is declared as a 'virtual' function to enable dynamic linkage or late 
+                      binding on the function which is especially important in a polymorphic hierarchy.
+                    
+                    ○ The root abstract class 'BookingClass' has a member function 'bool BookingClass::IsAC() const' that returns the value of BookingClass::isAC_ 
+                      for a booking class, that is returns true if the booking class has AC and false if it is does not. The return type is 'bool' to match the type 
+                      of the data member 'BookingClass::isAC_' and the method is a 'const' method that ensures that the state of the instance of any of the concrete  
+                      booking classes as a member of which this method is called stays intact. This member function is declared as a 'virtual' function to enable 
+                      dynamic linkage or late binding on the function which is especially important in a polymorphic hierarchy.
+                      
+                    ○ The root abstract class 'BookingClass' has a member function 'bool BookingClass::IsSitting() const'. The return type is 'bool'. It returns 'true' if the
+                      booking class is of seat-type and 'false' otherwise. The method is a 'const' method that ensures that the state of the instance of any of the concrete booking 
+                      classes as a member of which this method is called stays intact. This member function is declared as a 'pure virtual' function. Being a 'virtual' function, 
+                      dynamic linkage or late binding is possible on the function which is especially important in a polymorphic hierarchy. The reason it is declared as a 'pure' 
+                      virtual function in 'BookingClass' class is that there is no data member in the class that can tell if the booking class is "sitting". Besides, it depends 
+                      on the dynamic type of the object as a member of which this method is called, if the booking class is sitting or not. For a concrete class that specializes 
+                      'BookingClassSeat', this method should return true and for the ones that specialize 'BookingClassBerth' it should return false. So instead of keeping another 
+                      data member in the root abstract class to store this information, this 'pure virtual' function can be overridden in the suitable derived classes.
+
+                    ○ The root abstract class 'BookingClass' has a member function 'int BookingClass::GetNumberOfTiers() const'. The return type is 'int' because it returns the number of
+                      tiers in a booking class. The method is a 'const' method that ensures that the state of the instance of any of the concrete booking classes as a member of which 
+                      this method is called stays intact. This member function is declared as a 'pure virtual' function. Being a 'virtual' function, dynamic linkage or late binding 
+                      is possible on the function which is especially important in a polymorphic hierarchy. The reason it is declared as a 'pure' virtual function in 'BookingClass' class is 
+                      that there is no data member in the class that can tell the number of tiers in the booking class. Besides, it depends on the dynamic type of the object as a member 
+                      of which this method is called, the number of tiers the booking class has. For a concrete class that specializes 'BookingClassSeatNoTier', this method should return 
+                      0 and for the ones that specialize 'BookingClassBerthDoubleTier' it should return 2 and for the ones that specialize 'BookingClassBerthTripleTier', it should return 3. 
+                      So instead of keeping another data member in the root abstract class to store this information, this 'pure virtual' function can be overridden in the suitable
+                      derived classes.
+
+                    ○ All the pure virtual functions are overridden in the appropriate derived abstract classes, at different levels of inheritance. For example, the pure virtual method 
+                      'BookingClass::IsSitting' is overridden in the classes 'BookingClassSeat' and 'BookingClassBerth', while the method 'BookingClass::GetNumberOfTiers' is overridden 
+                      in 'BookingClassSeatNoTier', 'BookingClassBerthDoubleTier' and 'BookingClassBerthTripleTier'. Appropriate values are returned by each of these overridden methods on 
+                      the basis of the properties of the class where it is overridden. For example, the method 'BookingClassBerthTripleTier::GetNumberOfTiers' should return 3 
+                      while 'BookingClassBerthDoubleTier::GetNumberOfTiers' should return 2.
+                
+                •   Destructors (Abstract Base Classes)
+                    ○ As is clear from the above hierarchy diagram, there are 6 abstract base classes in the hierarchy. For each of these base classes a polymorphic destructor
+                      is written, like 'BookingClass::~BookingClass' for 'BookingClass'.
+                    ○ Salient Features
+                      - a destructor does not have a return type
+                      - a destructor has no parameters
+                      - a destructor cannot be a 'const' method
+                    ○ Why polymorphic? -- In a polymorphic hierarchy, it is important that in the base class(es) the destructors are also declared as polymorphic. This can be done by
+                      using the 'virtual' keyword in the destructor declaration inside the class definition (like "virtual ~BookingClass();"). Polymorphic destructors in the base classes
+                      enable dynamic dispatch of destructors and prevent "object slicing".
+                    ○ Access specifier -- The destructors in all these abstract base classes are kept under the "protected" access specifier.
+                      Why not "private"? -- Before construction of any instance of a derived class, there must be an instantiation of the base class. Every derived class has a base class
+                      part in its "object layout" and therefore call to the destructor of a derived class is always followed by the call to the destructor of the base class. For this to
+                      happen, the destructor of the base class must actually be accessible from the derived class. Therefore, destructor in a base class can never be "private".
+                      Why not "public"? -- The reason is similar to why for singleton classes the destructor is not kept public. If the destructor of any base class, which has singleton
+                      derived classes, is made public, it will become transparent to the client-side. If in the application, the base class destructor is called on the singleton instance
+                      of the derived class (intentionally or accidently), the base class part of the object will get destroyed hence failing the singleton for all applications in the project.
+                      This can be very risky and lethal.
+                      Therefore, "protected" is the best choice of the access-specifier for destructors in the abstract base classes in this case.
+
+                •   Concrete Classes
+                    ○ As in the assignment's master data, the above polymorphic hierarchy also has 7 concrete booking classes.
+                        - BookingClassSeatNoTierACOrdinary
+                        - BookingClassSeatNoTierNonACOrdinary
+                        - BookingClassBerthDoubleTierACLuxury
+                        - BookingClassBerthDoubleTierACOrdinary
+                        - BookingClassBerthDoubleTierNonACLuxury
+                        - BookingClassBerthTripleTierACOrdinary
+                        - BookingClassBerthTripleTierNonACOrdinary
+                      While the names of the classes are enough to highlight the attributes of that class, each one of these booking classes are in the most "specialized" forms and therefore are
+                      implemented as 'singleton' classes (just like 'Railways'). Like in 'Railways' class, here too for each concrete booking class, "Meyer's implementation of singleton class"
+                      is used. The design of each of these concrete classes is similar.
+                    
+                    ○ Each of the concrete booking classes has a private static 'const' data member of built-in type 'double' that stores the load factor of that booking class. The name of this data
+                      member is kept same among all the 7 classes, that is 'sLoadFactor' (qualification by the name of the class is obviously necessary). The value of this data member is initialized
+                      based on the master data given in the assignment.
+
+                    ○ Each of the concrete classes has a private constructor (refer to [2.2.3] to learn why the constructor should be private in singleton classes), for example 
+                      'BookingClassSeatNoTierACOrdinary::BookingClassSeatNoTierACOrdinary(const string &, const string &)' for the booking class 'BookingClassSeatNoTierACOrdinary'. It 
+                      neither has a return type and nor can it be a 'const' method. It takes two arguements, both of 'string' type. Both of them are passed by reference to avoid copying 
+                      overhead. Besides, they are passed as 'const' references so that the values of the "actual" parameters are not changed by this method. The first parameter is used 
+                      to initialize the name (data member 'BookingClass::name_') of the booking class and the second parameter is used to initialize the remarks (data member 
+                      'BookingClass::remarks_').
+                      
+                      An important thing in these constructors is that depending on the concrete booking class, the other data members like BookingClass::loadFactor_ and BookingClass::isAC_ and
+                      BookingClass::isLuxury_ are initialized. Eg- in the constructor of 'BookingClassSeatNoTierACOrdinary', the value of 'BookingClass::isLuxury_' is initialized to false and
+                      in the constructor of 'BookingClassBerthDoubleTierACLuxury', the value of 'BookingClass::isLuxury_' is initialized to true.
+                      Besides, the value of BookingClass::loadFactor_ in each of these constructors is initialized to the load factors of the corresponding classes stored in the static const 'double'
+                      member by the name of 'sLoadFactor'. Eg- in the constructor of 'BookingClassSeatNoTierACOrdinary', the value of BookingClass::loadFactor_ is initialized to the value of 
+                      'BookingClassSeatNoTierACOrdinary::sLoadFactor' and in the constructor of 'BookingClassBerthDoubleTierACLuxury', the value of BookingClass::loadFactor_ is initialized to the 
+                      value of 'BookingClassBerthDoubleTierACLuxury::sLoadFactor'. Finally for BookingClass::isAC_, its value is initialized to true for 'BookingClassSeatNoTierACOrdinary' while 
+                      false for 'BookingClassSeatNoTierNonACOrdinary' and likewise for other classes.
+
+                    ○ Each of the concrete classes has a public static member function, by the name of 'SpecialBookingClass' that acts as an interface between the global scope and the private
+                      constructor, for example --
+                      'static const BookingClassSeatNoTierNonAcOrdinary & BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass(const string & = "Second Sitting (2S)", const string & = "Bench seating")'
+                      for the class 'BookingClassSeatNoTierNonAcOrdinary'. It has the same arguement types as their respective constructors, except that here default values for the parameters are also
+                      given.
+                    ○ When 'SpecialBookingClass' method (qualified by the name of any of the above concrete booking classes) is called for the first time, the singleton object is constructed and every 
+                      next call to this method results with the same object being returned. 
+                    ○ A static booking class object is constructed in this method. This is a singleton because static storage duration for a function local means that only one instance 
+                      of that local exists in the program. This singleton instance is returned everytime a call to this method is made. The return is by reference because this concrete 
+                      class is a singleton class and any copy of the singleton instance will violate this property. Moreover, it is returned as a 'const' reference because the singleton 
+                      booking class object that is returned to the caller function must be treated as a constant object.
+                      Note that return by reference is possible here because the returned object is not a local non-static object but rather a local static object which is not
+                      allocated on the stack frame.
+                    ○ The default parameters are selected based on the "Master Data" given in the assignment. 'SpecialBookingClass' function in every concrete class has different default 
+                      parameters. Not "hard coding" the names of the booking-classes in the class definition and instead giving a choice to pass them as arguements gives more flexibility
+                      to the one who is building the application. For all we know, one might want to keep the names of the booking classes in "Hindi". 
+                    ○ The first parameter is passed as a reference to avoid expensive copying overhead. It is passed as a 'const' reference to ensure that the value of the 
+                      "actual" arguement is not effected in the caller function.
+                      Similarly, the second parameter is also passed as a reference to avoid expensive copying overhead. It is passed as a 'const' reference to ensure that the value of the 
+                      "actual" arguement is not effected in the caller function.
+                    ○ These two parameters are ultimately used in constructing the singleton object of the class. This means that these parameters are the ones that are passed on to the
+                      respective constructors. The singleton object is declared as a 'static' inside this method, which can be constructed no more than once. Therefore, the constructor 
+                      of the corresponding booking class is called at most once.
+                    
+                    ○ Each concrete booking class has a private destructor, for example 'BookingClassSeatNoTierNonAcOrdinary::~BookingClassSeatNoTierNonAcOrdinary()' for booking class
+                      'BookingClassSeatNoTierNonAcOrdinary'.
+                    ○ Destructors have no arguements, return type and neither can they be 'const' methods.
+                    ○ All the concrete booking classes are 'singleton' and the only instance of these classes is of 'static' type. When a variable is declared as static, space for it gets 
+                      allocated for the lifetime of the program. Therefore, any of the booking class instances are not "destructed" until the program gets terminated.
+                    ○ It is a good idea to make a destructor of a 'singleton' class private because then the client/application code won't call the destructor by accident. Calling the destructor 
+                      would cause the singleton to fail for all applications in the project as the instance would become invalid.
+                
+                •   Operators
+                    ○ This booking class hierarchy has an output streaming operator '<<' that dictates the expression "cout << b" to print the state of 
+                      the a concrete booking class instance 'b' to the console.
+                    ○ Signature -- ostream & operator << ( ostream & , const BookingClass & )
+                    ○ Friendship -- This function is not any member function but rather a global function. It is a 'friend' of the 'BookingClass' class and 
+                      hence can access all the private/protected/public members of this class (breaks encapsulation).
+                    ○ Parameters -- This operator method has two parameters. The first one is of output stream object 'ostream' type. The standard objects
+                      like 'std::cout' or 'std::cerr' are of this type. The LHS entity in the expression "cout << b" (that is, 'cout') is passed as the first
+                      parameter. This parameter is passed as a 'non-const reference'; 'non-const' because the state of the output-stream should be changed
+                      by the function when it inserts formatted output to that stream. The parameter is passed by 'reference' because it is imperitive to
+                      output the content/message on the same output-stream on which it is intended to by the expression "cout << b" in the caller function.
+                      The second arguement is of user-defined type (that can have its dynamic type as any of the above 7 concrete booking classes) which is 
+                      actually the RHS entity in the expression "cout << b" (that is, 'b'). It is passed by 'reference' because 'BookingClass' is an abstract 
+                      class which cannot be instantiated. Passing the second parameter by value will be like instantiating a local 'BookingClass' instance which 
+                      will give a compilation error. Secondly, polymorphism, which is very much needed here to access the correct dynamically linked methods
+                      and get the correct values defining the state of the booking class object, is observed only in pointers and references.
+                      It is a 'const' reference because the only way to get an instance of any of the concrete booking classes is through the method 
+                      'SpecialBookingClass' qualified by that class's name; and this method returns a 'const' reference that cannot be upcasted to a non-
+                      const reference of 'BookingClass'.
+                    ○ Return type -- The return type is 'ostream &'. The same stream that is passed as an arguement is returned to enable chained output
+                      streaming (like "cout << b1 << b2 << b3"). To ensure that the same stream is returned, the return is by 'reference'. It is a return by
+                      'non-const'-reference because the state of the returned output stream object might have to change in the caller function in case there
+                      is another instruction for formatted output chained with the former one. Return-by-reference is possible here because the returned output
+                      stream object is not a local object but rather the same object that was passed-by-reference as the first parameter.
+                    ○ This operator prints all the details defining the state of the booking class. This data is obtained from the various polymorphic member 
+                      functions in the 'BookingClass' (that dynamically bind to the correct overridden method in some derived class, if it is overridden).
+                    
+                    ○ For each of the concrete booking classes, the copy assignment operator '=' is blocked by declaring it in the private section of the class 
+                      definition. This is because for a 'singleton' class, a copy of the "only" instance can lead to a contradiction to the concept of "no more 
+                      than one instances".
+                
+                •   Flexibility and Extensibility
+                    ○ The name (and remarks) for the singleton instances of all the concrete booking class can be passed as parameters in the first call to 
+                      'SpecialBookingClass' method (qualified by the name of that booking class). Though default values are chosen from the "master data" 
+                      in the assignment, the concrete booking classes are not directly named after them. Passing name / remarks for a booking class by
+                      parameters is far better than permanently naming the classes based on the name of the "Indian Booking Classes" which, first of all, 
+                      reduces readability of the code. One might not be able to interpret the attributes of a class "ACChairCar" by merely reading its
+                      name, especially when a foreigner is working on the client side who is unfamiliar with this booking-class, but attributes of the class
+                      'BookingClassSeatNoTierAcOrdinary' are more than clear just from its name. Secondly, it also reduces the flexibility of being able to
+                      use this "polymorphic booking-class hierarchy" for other similar purposes. Say, one wants to develop a booking system for "French Railways" 
+                      with same booking classes with exactly same properties on the client-side, but use French names for the booking classes in place of English. 
+                      If this happens, the developer will have to change the names of all the classes in this hierarchy everywhere they occur (in "BookingClass.h" 
+                      and "BookingClass.cpp" files); names of constructors and destructors will have to be changed; unit tests might have to be re-conducted. 
+                      So, it is best to keep "generalised" names for the concrete booking classes.
+
+                    ○ While building a polymorphic hierarchy of booking-classes, two of the strongest attributes of a booking-class were used in extending the
+                      first two levels of the hierarchy tree. This makes it possible to remove or change the existing booking-classes and add more booking-
+                      classes to the hierarchy without making any (or very few) alterations to the rest of the structure.
+                    
+                    ○ For example, a new booking-class 'BookingClassBerthQuadTierAcLuxury' is to be added to the hierarchy (the name of the class is sufficient
+                      in describing the class). This can be done in minimal effort in few easy steps.
+                      - Derive abstract class 'BookingClassBerthQuadTier' from 'BookingClassBerth' and override 'BookingClass::GetNumberOfTiers' method in it.
+                      - Derive concrete class 'BookingClassBerthQuadTierAcLuxury' from 'BookingClassBerthQuadTier'.
+                        - Write a private constructor and destructor for this class. Implement appropriate design of "Meyer's singleton" in the
+                          constructor.
+                        - Declare a 'private' static constant data member that stores the load factor of this booking class.
+                        - Write a public static method 'BookingClassBerthQuadTierAcLuxury::SpecialBookingClass' that acts as an interface between the
+                          global scope and the private constructor.
+                        - Block the copy assignment operator.
+                        - Write a friend function for overloading the output streaming operator (optional, depends upon requirements).
+                      - Push the load factor of this class into the vector 'BookingClass::sLoadFactors'.
+                    
+                    ○ According to the problem statement, the luxury/ordinary categorization of booking-classes may change as per the tax rules. In case this
+                      happens, the existing concrete booking-class can be modified to inculcate these changes. Let the categorization of the booking class
+                      'BookingClassSeatNoTierACOrdinary' changes from ordinary to luxury. The following steps can come in handy to reflect this change.
+                      - In the body of the constructor of 'BookingClassSeatNoTierACOrdinary', instead of assigning the data member 'BookingClass::isLuxury_'
+                        to false, assign it to true. 
+                      This is all that has to be done.
+                    
+                    ○ In case we want to deactivate/remove a booking-class, its corresponding concrete class in the hierarchy can simply be removed without
+                      harming the rest of the classes. The load factor of the removed class however should besides be removed from the vector 'BookingClass::sLoadFactors'.
+
+                      
+            [2.2.5]   Passenger
+
+                •   Enumerated Types
+                    ○ There are two enumerated types declared 'public' in the namespace of 'Passenger' class.
+                    ○ The first one is 'Passenger::Gender'. It has 2 values -- Male and Female.
+                    ○ The second one is 'Passenger::Category'. It has 6 values -- General, Ladies, SeniorCitizen,
+                      Divyaang, Tatkaal, PremiumTatkaal.
+                    ○ They are declared 'public' so that they can be used in the application to pass appropriate values to
+                      the constructor of this class while instantiating a 'Passenger' instance.
+
+                •   Attributes
+                    ○ 'Passenger::name_'          : It is of 'string' type (declared in <string> header). It stores the name of the passenger.
+                    ○ 'Passenger::adhaarNumber_'  : It is of 'string' type. It stores the adhaar card number of the passenger.
+                    ○ 'Passenger::dateOfBirth_'   : It is of user-defined type 'Date' which stores the date of birth.
+                    ○ 'Passenger::gender_'        : It is of user-defined enumerated data-type 'enum Passenger::Gender'. In this design, there are 
+                                                    two possible genders --  Male ('enum Passenger::Gender::Male = 0') and 
+                                                    Female ('enum Passenger::Gender::Female = 1')
+                    ○ 'Passenger::category_'      : It is of user-defined enumerated data-type 'enum Passenger::Category'. In this design, there are six possible categories -- 
+                                                    General ('enum Passenger::Category::General = 0'), Ladies ('enum Passenger::Category::Ladies = 1'), Senior 
+                                                    Citizen ('enum Passenger::Category::SeniorCitizen = 2'), Divyaang ('enum Passenger::Category::Divyaang = 3'), 
+                                                    Tatkaal ('enum Passenger::Category::Tatkaal = 4'), PremiumTatkaal ('enum Passenger::Category::PremiumTatkaal = 5').
+                    ○ 'Passenger::mobileNumber_'  : It is of 'string' type. It stores the mobile number of the passenger.
+
+                •   Constructors
+                    ○ The class has a public constructor.
+                    ○ Signature --  Passenger::Passenger(const string &, const string &, const Date &, Passenger::Gender, 
+                                                         Passenger::Category, const string & = "NA")
+                    ○ A constructor neither has a return type nor can it be a 'const' method.
+                    ○ The first parameter is a 'string' object that initializes 'Passenger::name_' data member. It is passed
+                      by reference to avoid copying overheads. It is passed as a 'const' reference so that the "actual" parameter
+                      does not get accidently changed.
+                    ○ The second parameter is a 'string' object that initializes 'Passenger::adhaarNumber_' data member. It is passed
+                      by reference to avoid copying overheads. It is passed as a 'const' reference so that the "actual" parameter
+                      does not get accidently changed.
+                    ○ The third parameter is of user-defined type 'Date' object that initializes 'Passenger::dateOfBirth_' data 
+                      member. It is passed by reference to avoid copying overheads. It is passed as a 'const' reference so that 
+                      the "actual" parameter does not get accidently changed.
+                    ○ The fourth parameter is of user-defined enumerated data-type 'Passenger::Gender', that initializes the data
+                      member 'Passenger::gender_'.
+                    ○ The fifth parameter is of user-defined enumerated data-type 'Passenger::Category', that initializes the data
+                      member 'Passenger::category_'.
+                    ○ The sixth parameter is a 'string' object that initializes 'Passenger::mobileNumber_' data member. It is passed
+                      by reference to avoid copying overheads. It is passed as a 'const' reference so that the "actual" parameter
+                      does not get accidently changed. It is an optional attribute and therefore it is given a default value of
+                      "NA" that stands for "not available".
+                    ○ All the data members are initialized in the initializer-list and therefore the constructor body is empty.
+
+                    ○ 'Passenger' has a public copy constructor that takes a source 'Passenger' instance as an arguement and constructs a new
+                      instance of 'Passenger' Class with state (all the data members) same as the arguement.
+                    ○ Signature --  Passenger::Passenger ( const Passenger & )
+                    ○ The 'Passenger' object is passed as a 'const reference' to avoid an infinite loop stuck in the copy constructor. If the
+                      parameter is passed by value, the passed object will have to be copied to the local arguements and will in turn call
+                      the copy constructor; leading to an indefinite sequence of calls to the copy constructor.
+                    ○ The source 'Passenger' instance is passed as a 'const' reference so as to ensure that the state of the "actual" parameter stays
+                      intact after the constructor returns.
+                    ○ Constructors can neither have a return type nor can they be 'const' methods.
+
+                •   Operators
+                    ○ The class has a public copy assignment operator '=' that dictates the expression "p1 = p2" to copy the state of Passenger p2 to the
+                      state of the Passenger p1.
+                    ○ Signature --  Passenger & Passenger::operator = ( const Passenger & )
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Passenger' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Passenger' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "p1 = p2" and hence acts as a source whose state is copied.
+                    ○ Return type -- The return type 'Passenger &' is preferred over 'void' to support chained assignment operations like "p1 = p2 = p3".
+                      Had the return type been 'void', single assignment expressions like "p1 = p2" could still be possible but "p1 = p2 = p3" would
+                      become invalid because this expression attempts to copy value returned by "p2 = p3" to 'p1'; since the former call to the operator 
+                      method will return a 'void', it could not be copied to 'p1'.
+                    ○ The return statement of this operator function must be "return *this ;" to enable chained assignment operations. This simply returns
+                      the instance as a member of which this method was called. The type of 'this' is 'Passenger * const' and hence for the return statement
+                      "return *this ;" the return type should be 'Passenger &'. The return is by 'reference'. This is again done to avoid any copying overheads.
+                      (NOTE : '*this' can be returned by reference because it is not a local non-static instance)
+
+                    ○ That class has an output streaming operator '<<' that dictates the expression "cout << p" to print the details of the 'Passenger'
+                      instance 'p' to the console.
+                    ○ Signature -- ostream & operator << ( ostream & , const Passenger & )
+                    ○ Friendship -- This function is not a member function but rather a global function. It is a 'friend' of the 'Passenger' class and hence
+                      can access all the private/protected/public members of the class (breaks encapsulation), 'Friendship' is ensured by the keyword 'friend', 
+                      implemented in the form of -- "friend ostream & operator << ( ostream & , const Passenger & ) ;" inside the class definition.
+                    ○ Parameters -- This operator method has two parameters. The first one is of output stream object 'ostream' type. The standard objects
+                      like 'std::cout' or 'std::cerr' are of this type. The LHS entity in the expression "cout << p" (that is, 'cout') is passed as the first
+                      parameter. This parameter is passed as a 'non-const reference'; 'non-const' because the state of the output-stream should be changed
+                      by the function when it inserts formatted output to that stream. The parameter is passed by 'reference' because it is imperitive to
+                      output the content/message on the same output-stream on which it is intended to by the expression "cout << p" in the caller function.
+                      The second arguement is of user-defined type 'Passenger' which is actually the RHS entity in the expression "cout << p" (that is, 'p'). 
+                      It is passed by 'reference' to avoid copying overheads and that too as a 'const'-reference to ensure that the state of the actual
+                      parameter is not changed by this function.
+                    ○ Return type -- The return type is 'ostream &'. The same stream that is passed as an arguement is returned to enable chained output
+                      streaming (like "cout << p1 << p2 << p3"). To ensure that the same stream is returned, the return is by 'reference'. It is a return by
+                      'non-const'-reference because the state of the returned output stream object might have to change in the caller function in case there
+                      is another instruction for formatted output chained with the former one. Return-by-reference is possible here because the returned output
+                      stream object is not a local object but rather the same object that was passed-by-reference as the first parameter.
+
+                •   Destructor
+                    ○ The class has a public destructor.
+                    ○ Signature --    Passenger::~Passenger()
+                    ○ A destructor has no parameters. It can have no return type and neither can it be a 'const' method.
+                    ○ There are no dynamically allocated data members for any instance. Neither is there any non-const static data member
+                      that has to be updated after any 'Passenger' object is destructed. Therefore, the body of the destructor is empty.
+                    ○ The destructor is of polymorphic type that is ensured by the 'virtual' keyword in the declaration "virtual ~Passenger();".
+                      This is done for future extension because in more sophisticated versions, it would be good to have it as a polymorphic 
+                      base, especially since the specification talks of various "categories" of passengers.
+                    ○ Having a 'virtual' destructor in the base class(es) of a polymorphic hierarchy ensures dynamic dispatch of destructor and prevents 
+                      any "object slicing" whenever a 'Passenger' reference or pointer, whose dynamic type is some specialization of this class, gets 
+                      deleted/destructed.
+
+
+
+            [2.2.6]   Booking
+
+                •   Attributes
+                    ○ 'Booking::fromStation_'     : It of user-defined type 'Station'. It stores the departure 'Station' object.
+                    ○ 'Booking::toStation_'       : It of user-defined type 'Station'. It stores the destination 'Station' object.
+                    ○ 'Booking::bookingClass_'    : It is a pointer to the user-defined type 'BookingClass' (const BookingClass* Booking::bookingClass_).
+                                                    The dynamic type of the pointer can be a pointer to any of the concrete booking classes. It is actually
+                                                    a pointer to a 'const BookingClass' because the singleton objects of all the concrete booking classes
+                                                    are only available through the method 'SpecialBookingClass' (qualified by the name of that class) that 
+                                                    returns a 'const' reference to the singleton object. So, a 'const' concrete class pointer cannot be
+                                                    upcasted to a pointer to non-const 'BookingClass' without an error.
+                    ○ 'Booking::pnr_'             : It is of built-in type 'unsigned int'. It stores the PNR number of a booking. It is assigned in a sequential 
+                                                    order starting from 1.
+                    ○ 'Booking::fare_'            : It is of built-in type 'int'. It stores the net expense of the trip including all the taxes and surplus
+                                                    charges (rounded off to the nearest integer). Fare computation algorithm of a 'Booking' is discussed later.
+                    ○ 'Booking::dateOfTravel_'    : It is of user-defined type 'Date'. It stores the date on which the journey is supposed to start.
+                    ○ 'Booking::passenger_'       : It is a pointer to the user-defined type 'Passenger' (const Passenger *Booking::passenger_). A pointer to
+                                                    'Passenger' is used here rather than simply a 'Passenger' object because it is desired for this data field 
+                                                    to be "null-able" and a pointer can store a NULL value. Besides, pointer to a 'const' Passenger is used so
+                                                    that even if the data member itself isn't constant and can point to another 'Passenger', the state of the
+                                                    'Passenger' cannot be changed by any member functions of the class.
+                    ○ 'Booking::bookingStatus_'   : It is of built-in type 'bool'. It stores the status of the booking.
+                    ○ 'Booking::bookingMessage_'  : It is of 'string' type (defined in header <string>). This stores some booking-related message.
+
+                •   Static Data Members
+                    ○ 'Booking::sBookingPNRSerial' : It is of built-in type 'unsigned int'. The value of data member 'Booking::pnr_' is assigned in a sequential
+                                                     manner starting from 1. So, it is important to keep track of the next PNR number in the sequence that changes
+                                                     with instantiation of every new 'Booking' object. This non-const static data member is initialized to 1 and is
+                                                     incremented by 1 unit whenever a new instance is constructed. In the constructor, the value of 'Booking::pnr_'
+                                                     is always assigned the current value of 'Booking::sBookingPNRSerial'. This data member is 'private' and obviously
+                                                     non-const.
+                    ○ 'Booking::sBaseFarePerKM' : It is a 'const' static of built-in type 'double'. This stores the per-kilometer charge in computing the base fare
+                                                  of the trip. It is initialized to the value given in the Section 3.4 (Constants) of the assignment (Rs 0.5/km).
+                                                  This data member is 'private'.
+                    ○ 'Booking::sACSurcharge' : It is a 'const' static of built-in type 'double'. This stores the surplus AC charge for the those bookings whose
+                                                booking class has AC in it. It is initialized to the value given in the Section 3.4 (Constants) of the assignment 
+                                                (Rs 50.00). This data member is 'private'.
+                    ○ 'Booking::sLuxuryTaxPercent' : It is a 'const' static of built-in type 'double'. This stores the percentage of tax that is implied on the fare
+                                                     for those bookings whose booking classes are "luxury". It is initialized to the value given in the Section 3.4 
+                                                     (Constants) of the assignment (25.00 %). This data member is 'private'.
+                    ○ 'Booking::sBookings' : It is of static 'vector' (vector is a standard template class declared in the header <vector>) type. It is a vector of
+                                             pointers to 'Booking' objects ('static std::vector<const Booking *> Booking::sBookings'). It consists of pointers to all 
+                                             those 'Booking' instances that are "active" (where instantiated but are not "destructed" yet). It is a 'public' data 
+                                             member because one might need to iterate over the vector to get aquainted with all the "existing" 'Booking' objects at that
+                                             moment. The template arguement is chosen to be 'const Booking*' rather than 'Booking*' so that the state of any existing 
+                                             'Booking' object cannot be modified.
+                    ○ All the above data members are chosen to be 'static' because they are not associated with any one particular instance of the 'class' but define
+                      the charcateristics/information of the class itself.
+
+                •   Constructors
+                    ○ The class has a public constructor.
+                    ○ Signature : 'Booking::Booking(const Station &, const Station &, const Date &, const BookingClass &, const Passenger * = NULL)'
+                    ○ Constructors do not have a return type and neither can they be 'const' methods.
+                    ○ Parameters -- It has five arguements. The first two are of user-defined type 'Station'. Both are passed by reference to avoid any copying overheads.
+                      Besides, they are passed as a 'const' reference so that the "actual" parameters stay intact. The first parameter is assigned to 'Booking::fromStation_'
+                      and the second parameter is assigned to 'Booking::toStation_'.
+                      The third parameter is of user-defined type 'Date'. It is passed by reference to avoid copying overhead and that too a const-reference so that the
+                      "actual" parameter stays intact. It is assigned to 'Booking::dateOfTravel_'.
+                      The fourth parameter is of user-defined type 'BookingClass'. It passed as a reference because 'BookingClass' is an abstract class and passing by value
+                      will mean constructing a local instance of 'BookingClass' which is illegal for an abstract class. Besides, polymorphism is shown only by pointers and
+                      references. Secondly, it is a 'const' reference because the only way to get an instance of any of the concrete booking classes is through the method 
+                      'SpecialBookingClass' qualified by that class's name; and this method returns a 'const' reference that cannot be upcasted to a non-const reference of
+                      'BookingClass'. The "location" of this parameter is assigned to 'Booking::bookingClass_'.
+                      The last parameter is a pointer to the user-defined type 'Passenger'. It has a default value of 'NULL' because in this version, there is no formal use
+                      or role of 'Passenger' attribute in a 'Booking'. It is assigned to 'Booking::passenger_'. It is passed as a pointer to 'const' Passenger so that the
+                      state of the actual 'Passenger' instance cannot be changed.
+                      (NOTE : The significance and the choice of data types for all the attributes are already discussed in "Attributes")
+                    ○ The other attributes of an instance of 'Booking' object include 'Booking::pnr_', 'Booking::fare_', 'Booking::bookingStatus_' and 'Booking::bookingMessage_'
+                      whose values cannot be controlled by passing appropriate parameters in the constructor. For this version the values of 'Booking::bookingStatus_' and 
+                      'Booking::bookingMessage_' are always initialized to true and "BOOKING SUCCEEDED" respectively. 'Booking::pnr_' is always initialized to the value of static
+                      data member 'Booking::sBookingPNRSerial' and then the latter is incremented by 1 unit. The value of 'Booking::fare_' is computed by a public member function
+                      'int Booking::ComputeFair() const'. The algorithm used to compute the fare for a booking is discussed later.
+                    ○ In the constructor body, the static data member 'Booking::sBookings' is updated by pushing the newly constructed instance of 'Booking' into that vector using 
+                      'void std::vector<const Booking *>::push_back(const Booking *&&__x)' method.
+                    
+                    ○ 'Booking' has a public copy constructor that takes a source 'Booking' instance as an arguement and constructs a new
+                      instance of 'Booking' Class with state same as the arguement (except the PNR number -- 'Booking::pnr_').
+                    ○ The 'Booking' object is passed as a 'const reference' to avoid an infinite loop stuck in the copy constructor. If the
+                      parameter is passed by value, the passed object will have to be copied to the local arguements and will in turn call
+                      the copy constructor; leading to an indefinite sequence of calls to the copy constructor.
+                    ○ The source 'Booking' instance is passed as a 'const' reference so as to ensure that the state of the "actual" parameter stays
+                      intact after the constructor returns.
+                    ○ Constructors can neither have a return type nor can they be 'const' methods.
+                    ○ Signature --  Booking::Booking(const Booking &)
+                    ○ The values of all the data members is simply copied to the Booking instance being contructed, except the data member 'Booking::pnr_'.
+                      'Booking::pnr_' is always initialized to the value of static data member 'Booking::sBookingPNRSerial' and then the latter is 
+                      incremented by 1 unit.
+                    ○ In the constructor body, the static data member 'Booking::sBookings' is updated by pushing the newly constructed instance of  
+                      'Booking' into that vector using 'void std::vector<const Booking *>::push_back(const Booking *&&__x)' method.
+
+                •   Member Functions
+                    ○ The class has a public non-static member function that computes the fare (data member'Booking::fare_') of a booking.
+                    ○ Signature --    int Booking::ComputeFair() const
+                    ○ Return type -- The fare computed is rounded off to the nearest integer and therefore the return type is 'int'.
+                    ○ This is a 'const' method. This ensures that the state of the 'Booking' class object as a member of which this method is called
+                      stays intact.
+                    ○ Algorithm -- The algorithm given in the Section 1.3 (Business Logic) of the assignment is implemented here.
+                      (1) Get the distance 'd' between the two terminal stations ('Booking::fromStation_' and 'Booking::toStation_') with the call
+                          "Railways::SpecialRailways().GetDistance(fromStation_, toStation_)". The member function  of class 'Station' that is
+                          'int Station::GetDistance(const Station &) const' could also be used but this function also further uses
+                          'int Railways::GetDistance(const Station &, const Station &) const' function to "get" the distance; so it is better to
+                          use it directly.
+                      (2) Compute the 'baseFare' by multiplying this distance 'd' with the base fare rate (per kilometer) given by Booking::sBaseFarePerKM.
+                      (3) Compute 'loadedFare' by multiplying 'baseFare' with the load factor of the booking class, given by "bookingClass_->GetLoadFactor()".
+                      (4) Check if the booking class has AC (use "bookingClass_->IsAC()"). If so add Booking::sACSurcharge to the 'loadedFare'.
+                      (5) Check if the booking class is luxury (use "bookingClass_->IsLuxury()"). If so multiply "( 1.0 + Booking::sLuxuryTaxPercent / 100.0 )" 
+                          value to the 'loadedFare'.
+                      (6) Round off the 'loadFare' to the nearest integer using 'double __cdecl round(double)' function given in header <cmath> and return this value.
+                    ○ This member function is declared as a virtual function (ensured by 'virtual' keyword in "virtual int ComputeFair ( ) const;"). This has no use
+                      in this version but is done for future extension in case a polymorphic 'Booking' hierarchy will have to be developed.
+
+                •   Operators
+                    ○ The class has a public copy assignment operator '=' that dictates the expression "b1 = b2" to copy the state of Booking b2 to the
+                      state of the Booking b1.
+                    ○ Signature -- Booking & Booking::operator = ( const Booking & )
+                    ○ Parameters -- This operator method has one parameter of user-defined 'Booking' type. It is passed as a 'const reference' (pass-
+                      by-value can also work unlike in the case of the copy constructor) to avoid any copying overheads. 'const' reference ensures that
+                      the state of the "actual" 'Booking' instance that is passed as an arguement stays intact/unaffected by this method.
+                    ○ The passed arguement is the RHS entity in a general expression "b1 = b2" and hence acts as a source whose state is copied.
+                    ○ Return type -- The return type 'Booking &' is preferred over 'void' to support chained assignment operations like "b1 = b2 = b3".
+                      Had the return type been 'void', single assignment expressions like "b1 = b2" could still be possible but "b1 = b2 = b3" would
+                      become invalid because this expression attempts to copy value returned by "b2 = b3" to 'b1'; since the former call to the operator 
+                      method will return a 'void', it could not be copied to 'b1'.
+                    ○ The return statement of this operator function must be "return *this ;" to enable chained assignment operations. This simply returns
+                      the instance as a member of which this method was called. The type of 'this' is 'Booking * const' and hence for the return statement
+                      "return *this ;" the return type should be 'Booking &'. The return is by 'reference'. This is again done to avoid any copying overheads.
+                      (NOTE : '*this' can be returned by reference because it is not a local non-static instance)
+                    
+                    ○ That class has an output streaming operator '<<' that dictates the expression "cout << b" to print all the details of the 'Booking'
+                      instance 'b' to the console in a nice properly-aligned format.
+                    ○ Signature -- ostream & operator << ( ostream & , const Booking & )
+                    ○ Friendship -- This function is not a member function but rather a global function. It is a 'friend' of the 'Booking' class and hence can
+                      access all the private/public members of the class (breaks encapsulation), 'Friendship' is ensured by the keyword 'friend', implemented 
+                      in the form of "friend ostream & operator << ( ostream & , const Booking & ) ;" inside the class definition.
+                    ○ Parameters -- This operator method has two parameters. The first one is of output stream object 'ostream' type. The standard objects
+                      like 'std::cout' or 'std::cerr' are of this type. The LHS entity in the expression "cout << b" (that is, 'cout') is passed as the first
+                      parameter. This parameter is passed as a 'non-const reference'; 'non-const' because the state of the output-stream should be changed
+                      by the function when it inserts formatted output to that stream. The parameter is passed by 'reference' because it is imperitive to
+                      output the content/message on the same output-stream on which it is intended to by the expression "cout << b" in the caller function.
+                      The second arguement is of user-defined type 'Booking' which is actually the RHS entity in the expression "cout << b" (that is, 'b'). 
+                      It is passed by 'reference' to avoid copying overheads and that too as a 'const'-reference to ensure that the state of the 'Booking'
+                      parameter is not changed by this function.
+                    ○ Return type -- The return type is 'ostream &'. The same stream that is passed as an arguement is returned to enable chained output
+                      streaming (like "cout << b1 << b2 << b3"). To ensure that the same stream is returned, the return is by 'reference'. It is a return by
+                      'non-const'-reference because the state of the returned output stream object might have to change in the caller function in case there
+                      is another instruction for formatted output chained with the former one. Return-by-reference is possible here because the returned output
+                      stream object is not a local object but rather the same object that was passed-by-reference as the first parameter.
+
+                •   Destructor
+                    ○ The class has a public destructor.
+                    ○ Signature --    Booking::~Booking()
+                    ○ A destructor has no parameters. It can have no return type and neither can it be a 'const' method.
+                    ○ This method is called whenever a 'Booking' instance goes out of scope or gets de-allocated from the stack-frame or heap. When this happens
+                      it is important to update the static vector 'Booking::sBookings' by removing the instance that is getting deallocated. This task is
+                      performed in the destructor body.
+                    ○ Algorithm -- The following template function (declared in <algorithm> header) is used in finding the iterator in the range 
+                      (Booking::sBookings.begin(), Booking::sBookings.end()) that contains the element whose address is same as that of the instance 
+                      being deleted.
+                      std::vector<const Booking *>::iterator std::find<std::vector<const Booking *>::iterator, Booking *>
+                                                                                          ( std::vector<const Booking *>::iterator, 
+                                                                                            std::vector<const Booking *>::iterator, Booking *const &  )
+                      
+                      The iterator returned by this function is passed as an arguement to the following method of template class 'vector', that erases/removes
+                      the element at the iterator position passed as parameter.
+                          std::vector<const Booking *>::iterator std::vector<const Booking *>::erase(std::vector<const Booking *>::const_iterator __position)
+                      So, this entire task is summarized by the instruction "sBookings.erase(find(sBookings.begin(), sBookings.end(), this));" in the
+                      body of the destructor.
+                      
+                    ○ The destructor is of polymorphic type that is ensured by the 'virtual' keyword in the declaration "virtual ~Booking();".
+                      This is done for future extension because in more sophisticated versions, it would be good to have it as a polymorphic 
+                      base, especially when a more involved use of 'Passenger' in might likely lead to a 'Booking' hierarchy.
+                    ○ Having a 'virtual' destructor in the root/base class of a polymorphic hierarchy ensures dynamic dispatch of destructor and prevents 
+                      "object slicing" whenever a 'Booking' reference or pointer, whose dynamic type is some specialization of this class, gets deleted/destructed.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+

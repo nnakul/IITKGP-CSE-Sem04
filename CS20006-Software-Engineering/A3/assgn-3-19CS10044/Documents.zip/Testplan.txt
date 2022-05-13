@@ -1,0 +1,1114 @@
+
+
+TEST PLAN DOCUMENT   |   SOFTWARE ENGINEERING CS20006
+Nakul Aggarwal       |   19CS10044
+
+
+
+[A] UNIT TEST PLAN -- 'Station' CLASS
+
+[A.1]   Constructors
+
+        [A.1.1]     Station::Station(const std::__cxx11::string &)
+                    (1.) Construct 'Station' object passing some arbitrary 'string'-object as parameter
+                    (2.) Compare the newly constructed instance's 'Station::name_' data member with the passed parameter
+        
+        [A.1.2]     Station::Station(const Station &)
+                    (1.) Construct 'Station' object passing a 'Station' object with arbitrary name as parameter
+                    (2.) Compare the newly constructed instance's 'Station::name_' data member with that of the passed parameter
+
+[A.2]   Operators
+
+        [A.2.1]     Copy Assignment Operator -- Station &Station::operator=(const Station &)
+                    (1.) Construct two 'Station' instances with different names
+                    (2.) Copy one to the other
+                    (3.) Compare value of 'Station::name_' for the two 'Station' instances
+        
+        [A.2.2]     Relational Operator -- bool Station::operator==(const Station &) const
+                    (1.) Construct two 'Station' instances with same names
+                    (2.) Compare the two using binary '==' operator
+                    (3.) Construct another two 'Station' instances with different names
+                    (4.) Compare these two using binary '==' operator
+        
+        [A.2.3]     Relational Operator -- bool Station::operator!=(const Station &) const
+                    (1.) Construct two 'Station' instances with same names
+                    (2.) Compare the two using binary '!=' operator
+                    (3.) Construct another two 'Station' instances with different names
+                    (4.) Compare these two using binary '!=' operator
+        
+        [A.2.4]     Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const Station &)
+                    (1.) Output stream a single 'Station' instance (like "cout << s;")
+                    (2.) Output stream multiple 'Station' instances in a chain (like "cout << s1 << s2;")
+
+[A.3]   Member Functions
+
+        [A.3.1]     std::__cxx11::string Station::GetName() const
+                    (1.) Construct a 'Station' object with an arbitrary name, "Arbitrary Station Name"
+                    (2.) Compare the value returned by 'Station::GetName' method with "Arbitrary Station Name"
+        
+        [A.3.2]     int Station::GetDistance(const Station &) const
+                    [A.3.2.1]   Without first instantiating the singleton 'Railways' object
+                                [A.3.2.1.1] Check "mathematical-symmetry" of 'Station::GetDistance' method
+                                            (1.) Construct 5 'Station' instances with names -- "Mumbai", "Delhi", "Bangalore", "Kolkata", "Chennai"
+                                                 (let there names be 'st1', 'st2', 'st3', 'st4', 'st5' respectively)
+                                            (2.) Pick any one pair (out of 10 possible pairs) of 'Station' objects, say 'st1' and 'st2' and compare
+                                                 the values returned by "st1.GetDistance(st2)" and "st2.GetDistance(st1)"
+                                            (3.) Exhaustively repeat the step (2.) for all the 10 possible pairs.
+                                
+                                [A.3.2.1.2] Check accuracy of the values returned by 'Station::GetDistance' method
+                                            (Use the 'Station' objects constructed in [A.3.2.1.1](1.))
+                                            (1.) Compare the value returned by "st1.GetDistance(st2)" with 1447
+                                            (2.) Compare the value returned by "st1.GetDistance(st3)" with 981
+                                            (3.) Compare the value returned by "st1.GetDistance(st4)" with 2014
+                                            (4.) Compare the value returned by "st1.GetDistance(st5)" with 1338
+                                            (5.) Compare the value returned by "st2.GetDistance(st3)" with 2150
+                                            (6.) Compare the value returned by "st2.GetDistance(st4)" with 1472
+                                            (7.) Compare the value returned by "st2.GetDistance(st5)" with 2180
+                                            (8.) Compare the value returned by "st3.GetDistance(st4)" with 1871
+                                            (9.) Compare the value returned by "st3.GetDistance(st5)" with 350
+                                            (10.) Compare the value returned by "st4.GetDistance(st5)" with 1659
+
+                    [A.3.2.2]   First instantiating the singleton 'Railways' object
+                                Introduce "const vector<Station> test_stations = { Station("Paris"), Station("Rome"), Station("Venice") };" and 
+                                "const map<pair<string, string>, int> test_pairwise_distances =
+                                { { {"Paris", "Rome"}, 1531 }, { {"Paris", "Venice"}, 1145 }, { {"Rome", "Venice"}, 566 } };" parameters
+                                to construct the singleton 'Railways' object before proceeding.
+
+                                [A.3.2.2.1] Check "mathematical-symmetry" of 'Station::GetDistance' method
+                                            (1.) Construct 3 'Station' instances with names -- "Paris", "Rome", "Venice" (let there names be 
+                                                'st1', 'st2', 'st3' respectively)
+                                            (2.) Pick any one pair (out of 3 possible pairs) of 'Station' objects, say 'st1' and 'st2' and compare
+                                                 the values returned by "st1.GetDistance(st2)" and "st2.GetDistance(st1)"
+                                            (3.) Exhaustively repeat the step (2.) for all the 3 possible pairs.
+                                
+                                [A.3.2.1.2] Check accuracy of the values returned by 'Station::GetDistance' method
+                                            (1.) Compare the value returned by "st1.GetDistance(st2)" with 1531
+                                            (2.) Compare the value returned by "st1.GetDistance(st3)" with 1145
+                                            (3.) Compare the value returned by "st2.GetDistance(st3)" with 566
+
+
+
+[B] UNIT TEST PLAN -- 'Date' CLASS
+
+[B.1]   Constructors
+
+        [B.1.1]     Date::Date(unsigned int = 1U, unsigned int = 1U, unsigned int = 1970U)
+                    (1.) Construct a 'Date' instance with no parameters
+                    (2.) Compare the 'Date::date_', 'Date::month_', 'Date::year_' attributes of the instance in (1.) with
+                         1, 1, 1970 respectively
+                    (3.) Construct a 'Date' instance with one positive parameter (first parameter)
+                    (4.) Compare the 'Date::date_', 'Date::month_', 'Date::year_' attributes of the instance in (3.) with
+                         the passed parameter, 1, 1970 respectively
+                    (5.) Construct a 'Date' instance with two positive parameters (first and second parameter)
+                    (6.) Compare the 'Date::date_', 'Date::month_', 'Date::year_' attributes of the instance in (5.) with
+                         the first passed parameter, the second passed parameter, 1970 respectively
+                    (7.) Construct a 'Date' instance with three positive parameters (first, second and third parameter)
+                    (8.) Compare the 'Date::date_', 'Date::month_', 'Date::year_' attributes of the instance in (7.) with
+                         the first passed parameter, the second passed parameter, the third passed parameter respectively
+        
+        [B.1.2]     Date::Date(const Date &)
+                    (1.) Construct 'Date' object passing the 'Date' object constructed in [B.1.1](7.) as parameter
+                    (2.) Compare the newly constructed instance's 'Date::date_', 'Date::month_', 'Date::year_' attributes with
+                         those of the passed parameter.
+
+[B.2]   Operators
+
+        [B.2.1]     Copy Assignment Operator -- Date &Date::operator=(const Date &)
+                    (1.) Consider two 'Date' instances with different values of 'Date::date_', 'Date::month_', 'Date::year_'
+                    (2.) Copy one to the other
+                    (3.) Compare values of 'Date::date_', 'Date::month_', 'Date::year_' for the two 'Date' instances
+        
+        [B.2.2]     Relational Operator -- bool Date::operator==(const Date &) const
+                    (1.) Construct two 'Date' instances with same values of 'Date::date_', 'Date::month_', 'Date::year_'
+                    (2.) Compare the two using binary '==' operator
+                    (3.) Construct another 'Date' instance with at least one of 'Date::date_', 'Date::month_', 'Date::year_' 
+                         different than those in step (1.)
+                    (4.) Compare one 'Date' instance in (1.) with the one in (3.) using binary '==' operator
+        
+        [B.2.3]     Relational Operator -- bool Date::operator!=(const Date &) const
+                    (1.) Compare the two 'Date' instances' in [B.2.2](1.) using binary '!=' operator
+                    (2.) Compare one 'Date' instance in [B.2.2](1.) with the one in [B.2.2](3.) using binary '!=' operator
+        
+        [B.2.4]     Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const Date &)
+                    (1.) Output stream a single 'Date' instance (like "cout << d;")
+                    (2.) Output stream multiple 'Date' instances in a chain (like "cout << d1 << d2;")
+
+[B.3]   Static Constants
+
+        [B.3.1]     static const std::vector<std::__cxx11::string> Date::sMonthNames
+                    (1.) Check if the size/length of the vector is 12
+                    (2.) Tally in serial order the names of the months and the 'string'-elements in the vector
+
+        [B.3.2]     static const std::vector<std::__cxx11::string> Date::sDayNames
+                    (1.) Check if the size/length of the vector is 7
+                    (2.) Tally in serial order the names of the weekdays and the 'string'-elements in the vector
+
+
+
+[C] UNIT TEST PLAN -- 'Railways' CLASS
+
+[C.1]      Constructing singleton 'Railways' object with default parameters of Indian Railways
+          Construct the singleton 'Railways' instance with "const Railways & r1 = Railways::SpecialRailways();"
+          before proceeding
+
+          [C.1.1] Check Non-Static Data Members
+               (1.) Check if the size of the vector 'r1.stations_' is 5
+               (2.) Check elements at indexes 0 to 4 in 'r1.stations_' and compare them with the real values
+                    in the first default parameter of 'Railways::SpecialRailways' method, in the same order
+               (3.) Check if all the keys of the map that is set as the second default parameter of
+                    'Railways::SpecialRailways' method are found in 'r1.distStations_'
+               (4.) Check if the size of the map 'r1.distStations_' is 10
+               (5.) Check the values corresponding to each and every key in the map 'r1.distStations_'
+                    - Check if value returned by r1.distStations_.at({"Delhi", "Mumbai"}) is 1447
+                    - Check if value returned by r1.distStations_.at({"Bangalore", "Mumbai"}) is 981
+                    - Check if value returned by r1.distStations_.at({"Kolkata", "Mumbai"}) is 2014
+                    - Check if value returned by r1.distStations_.at({"Chennai", "Mumbai"}) is 1338
+                    - Check if value returned by r1.distStations_.at({"Bangalore", "Delhi"}) is 2150
+                    - Check if value returned by r1.distStations_.at({"Delhi", "Kolkata"}) is 1472
+                    - Check if value returned by r1.distStations_.at({"Chennai", "Delhi"}) is 2180
+                    - Check if value returned by r1.distStations_.at({"Bangalore", "Kolkata"}) is 1871
+                    - Check if value returned by r1.distStations_.at({"Bangalore", "Chennai"}) is 350
+                    - Check if value returned by r1.distStations_.at({"Chennai", "Kolkata"}) is 1659
+          
+          [C.1.2] Check Static Data Members
+               (1.) Check if the size of the vector 'Railways::sStations' is 5
+               (2.) Check elements at indexes 0 to 4 in 'Railways::sStations' and compare them with the real values
+                    in the first default parameter of 'Railways::SpecialRailways' method, in the same order
+               (3.) Check if the size of the map 'Railways::sDistStations' is 10
+               (4.) Check the values corresponding to each and every key in the map 'Railways::sDistStations'
+                    - Check if value returned by Railways::sDistStations.at({"Delhi", "Mumbai"}) is 1447
+                    - Check if value returned by Railways::sDistStations.at({"Bangalore", "Mumbai"}) is 981
+                    - Check if value returned by Railways::sDistStations.at({"Kolkata", "Mumbai"}) is 2014
+                    - Check if value returned by Railways::sDistStations.at({"Chennai", "Mumbai"}) is 1338
+                    - Check if value returned by Railways::sDistStations.at({"Bangalore", "Delhi"}) is 2150
+                    - Check if value returned by Railways::sDistStations.at({"Delhi", "Kolkata"}) is 1472
+                    - Check if value returned by Railways::sDistStations.at({"Chennai", "Delhi"}) is 2180
+                    - Check if value returned by Railways::sDistStations.at({"Bangalore", "Kolkata"}) is 1871
+                    - Check if value returned by Railways::sDistStations.at({"Bangalore", "Chennai"}) is 350
+                    - Check if value returned by Railways::sDistStations.at({"Chennai", "Kolkata"}) is 1659
+     
+          [C.1.3] Check For Singleton Class
+               
+               [C.1.3.1] Re-attempt Default Construction of a 'Railways' object
+                         (1.) Call the method 'Railways::SpecialRailways' without parameters
+                              "const Railways & r2 = Railways::SpecialRailways();"
+                         (2.) Compare the addresses of 'r1' and 'r2'
+                         (3.) Repeat the test [C.1.2] to ensure that the static data members have stayed intact
+
+               [C.1.3.2] Attempt Parametric Construction of a 'Railways' object
+                         Introduce "const vector<Station> test_stations = {Station("Amsterdam"), Station("Berlin"), Station("Brussels"), Station("Athens")};"
+                         and  "const map<pair<string, string>, int> test_pairwise_distances = {
+                                   { {"Amsterdam", "Berlin"}, 649 }, { {"Amsterdam", "Brussels"}, 209 }, { {"Amsterdam", "Athens"}, 3082 },
+                                   { {"Athens", "Berlin"}, 2552 }, { {"Athens", "Brussels"}, 3021 }, { {"Berlin", "Brussels"}, 782 } };"
+                         for testing purposes before proceeding
+
+                         (1.) Call the method 'Railways::SpecialRailways' with the first and second parameters as 'test_stations' and
+                              'test_pairwise_distances' respectively
+                              "const Railways & r4 = Railways::SpecialRailways(test_stations, test_pairwise_distances);"
+                         (2.) Repeat the test [C.1.1] for 'r4' (in place of 'r1') to ensure that the instance returned has the same properties
+                              as the former instance
+                         (3.) Compare the addresses of 'r1' and 'r4'
+                         (4.) Repeat the test [C.1.2] to ensure that the static data members have stayed intact
+
+          [C.1.4] Testing Member Function -- 'int Railways::GetDistance(const Station &, const Station &) const'
+
+               [C.1.4.1] Check "mathematical-symmetry" of the method
+                         (1.) Construct 5 'Station' instances with names -- "Mumbai", "Delhi", "Bangalore", "Kolkata", "Chennai"
+                              (let there names be 's1', 's2', 's3', 's4', 's5' respectively)
+                         (2.) Pick any one pair (out of 10 possible pairs) of 'Station' objects, say 's1' and 's2' and compare
+                              the values returned by "r1.GetDistance(s1,s2)" and "r1.GetDistance(s2,s1)"
+                         (3.) Exhaustively repeat the step (2.) for all the 10 possible pairs
+
+               [C.1.4.2] Check accuracy of the values returned by 'Railways::GetDistance' method
+                         (Use the 'Station' objects constructed in [C.1.4.1](1.))
+                         (1.) Compare the value returned by "r1.GetDistance(s1,s2)" with 1447
+                         (2.) Compare the value returned by "r1.GetDistance(s1,s3)" with 981
+                         (3.) Compare the value returned by "r1.GetDistance(s1,s4)" with 2014
+                         (4.) Compare the value returned by "r1.GetDistance(s1,s5)" with 1338
+                         (5.) Compare the value returned by "r1.GetDistance(s2,s3)" with 2150
+                         (6.) Compare the value returned by "r1.GetDistance(s2,s4)" with 1472
+                         (7.) Compare the value returned by "r1.GetDistance(s2,s5)" with 2180
+                         (8.) Compare the value returned by "r1.GetDistance(s3,s4)" with 1871
+                         (9.) Compare the value returned by "r1.GetDistance(s3,s5)" with 350
+                         (10.) Compare the value returned by "r1.GetDistance(s4,s5)" with 1659
+
+          [C.1.5] Output Streaming Operator
+               (1.) Output stream a single reference to the singleton 'Railways' instance (like "cout << r;")
+               (2.) Output stream multiple references to the singleton 'Railways' instance in a chain (like "cout << r1 << r2;")
+
+[C.2]     Constructing singleton 'Railways' object with passed parameters
+
+          [C.2.1] Construction with parameters
+               (1.) Introduce "const vector<Station> test_stations = {Station("Amsterdam"), Station("Berlin"), Station("Brussels"), Station("Athens")};"
+                    and  "const map<pair<string, string>, int> test_pairwise_distances = {
+                              { {"Amsterdam", "Berlin"}, 649 }, { {"Amsterdam", "Brussels"}, 209 }, { {"Amsterdam", "Athens"}, 3082 },
+                              { {"Athens", "Berlin"}, 2552 }, { {"Athens", "Brussels"}, 3021 }, { {"Berlin", "Brussels"}, 782 } };"
+                    for testing purposes
+               (2.) Call 'Railways::SpecialRailways' with the first and second parameters as 'test_stations' and 'test_pairwise_distances'
+                    respectively --- "const Railways & r1 = Railways::SpecialRailways(test_stations, test_pairwise_distances);"
+          
+          [C.2.2] Check Non-Static Data Members
+               (1.) Check if the size of the vector 'r1.stations_' is 4
+               (2.) Check elements at indexes 0 to 3 in 'r1.stations_' and compare them with the real values
+                    in the first parameter ('test_stations') passed to 'Railways::SpecialRailways' method, in
+                    the same order
+               (3.) Check if all the keys of the map ('test_pairwise_distances') that is passed as the second 
+                    parameter to 'Railways::SpecialRailways' method are found in 'r1.distStations_'
+               (4.) Check if the size of the map 'r1.distStations_' is 6
+               (5.) Check the values corresponding to each and every key in the map 'r1.distStations_'
+                    - Check if value returned by r1.distStations_.at({"Amsterdam", "Berlin"}) is 649
+                    - Check if value returned by r1.distStations_.at({"Amsterdam", "Brussels"}) is 209
+                    - Check if value returned by r1.distStations_.at({"Amsterdam", "Athens"}) is 3082
+                    - Check if value returned by r1.distStations_.at({"Athens", "Berlin"}) is 2552
+                    - Check if value returned by r1.distStations_.at({"Athens", "Brussels"}) is 3021
+                    - Check if value returned by r1.distStations_.at({"Berlin", "Brussels"}) is 782
+          
+          [C.2.3] Check Static Data Members
+               (1.) Check if the size of the vector 'Railways::sStations' is 4
+               (2.) Check elements at indexes 0 to 3 in 'Railways::sStations' and compare them with the real 
+                    values in the first parameter ('test_stations') passed to 'Railways::SpecialRailways' method,
+                    in the same order
+               (3.) Check if the size of the map 'Railways::sDistStations' is 6
+               (4.) Check the values corresponding to each and every key in the map 'Railways::sDistStations'
+                    - Check if value returned by Railways::sDistStations.at({"Amsterdam", "Berlin"}) is 649
+                    - Check if value returned by Railways::sDistStations.at({"Amsterdam", "Brussels"}) is 209
+                    - Check if value returned by Railways::sDistStations.at({"Amsterdam", "Athens"}) is 3082
+                    - Check if value returned by Railways::sDistStations.at({"Athens", "Berlin"}) is 2552
+                    - Check if value returned by Railways::sDistStations.at({"Athens", "Brussels"}) is 3021
+                    - Check if value returned by Railways::sDistStations.at({"Berlin", "Brussels"}) is 782
+     
+          [C.2.4] Check For Singleton Class
+               
+               [C.2.4.1] Re-attempt Parametric Construction of a 'Railways' object with same parameters
+                         (1.) Call the method 'Railways::SpecialRailways' with the same parameters ('test_stations'
+                              and 'test_pairwise_distances')
+                              "const Railways & r2 = Railways::SpecialRailways(test_stations, test_pairwise_distances);"
+                         (2.) Compare the addresses of 'r1' and 'r2'
+                         (3.) Repeat the test [C.2.3] to ensure that the static data members have stayed intact
+
+               [C.2.4.2] Re-attempt Parametric Construction of a 'Railways' object with different parameters
+                         Introduce "const vector<Station> repeat_test_stations = {Station("Paris"), Station("Rome"), Station("Venice")};"
+                         and  "const map<pair<string, string>, int> repeat_test_pairwise_distances =
+                                   { {{"Paris", "Rome"}, 1531}, {{"Paris", "Venice"}, 1145}, {{"Rome", "Venice"}, 566} };"
+                         
+                         (1.) Call the method 'Railways::SpecialRailways' with the first and second parameters as 'repeat_test_stations'
+                              and 'repeat_test_pairwise_distances' respectively
+                              "const Railways & r4 = Railways::SpecialRailways(repeat_test_stations, repeat_test_pairwise_distances);"
+                         (2.) Repeat the test [C.2.2] for 'r4' (in place of 'r1') to ensure that the instance returned has the same properties
+                              as the former instance
+                         (3.) Compare the addresses of 'r1' and 'r4'
+                         (4.) Repeat the test [C.2.3] to ensure that the static data members have stayed intact
+               
+               [C.2.4.3] Attempt Default Construction of a 'Railways' object
+                         (1.) Call the method 'Railways::SpecialRailways' without parameters
+                              "const Railways & r5 = Railways::SpecialRailways();"
+                         (2.) Repeat the test [C.2.2] for 'r5' (in place of 'r1') to ensure that the instance returned has the same properties
+                              as the former instance
+                         (3.) Compare the addresses of 'r1' and 'r5'
+                         (4.) Repeat the test [C.2.3] to ensure that the static data members have stayed intact
+
+
+
+[D] UNIT TEST PLAN -- Booking Class POLYMORPHIC HEIRARCHY
+
+     o  SUMMARY
+          - In all the intermediate abstract classes, test the upcasting of concrete classes and dynamic binding of various polymorphic
+            methods besides checking the accuracy of the data members
+          - In all the concrete classes, test the accuracy of the data members and the values returned by methods. Besides also check
+            the output streaming operator and conduct tests to ensure that each concrete class is a 'singleton' class
+
+[D.1] 'BookingClass'
+
+          [D.1.1] Assigning 'BookingClass' references
+               (1.) Declare 7 'const' references to 'BookingClass' and initalize each one of them to the singleton instance of each one 
+                    of the following concrete booking classes
+                    - BookingClassSeatNoTierAcOrdinary::SpecialBookingClass()             (stored in 'const BookingClass & poly_b1')
+                    - BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass()          (stored in 'const BookingClass & poly_b2')
+                    - BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass()          (stored in 'const BookingClass & poly_b3')
+                    - BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass()       (stored in 'const BookingClass & poly_b4')
+                    - BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass()        (stored in 'const BookingClass & poly_b5')
+                    - BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass()        (stored in 'const BookingClass & poly_b6')
+                    - BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass()     (stored in 'const BookingClass & poly_b7')
+          
+          [D.1.2] Checking Attributes
+               (1.) For each of the above 'BookingClass' references, check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_',
+                    'Booking::remarks_', 'Booking::isLuxury_', 'Booking::isAC_') with the true characteristics/properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b1.loadFactor_' - 1.25, 'poly_b1.name_' - "AC Chair Car (CC)", 'poly_b1.remarks_' - "AC chairs", 'poly_b1.isLuxury_' - false, 'poly_b1.isAC_' - true
+                    - 'poly_b2.loadFactor_' - 0.50, 'poly_b2.name_' - "Second Sitting (2S)", 'poly_b2.remarks_' - "Bench seating", 'poly_b2.isLuxury_' - false, 'poly_b2.isAC_' - false
+                    - 'poly_b3.loadFactor_' - 3.00, 'poly_b3.name_' - "AC First Class (1A)", 'poly_b3.remarks_' - "AC 2 berth coupe", 'poly_b3.isLuxury_' - true, 'poly_b3.isAC_' - true
+                    - 'poly_b4.loadFactor_' - 2.00, 'poly_b4.name_' - "First Class (FC)", 'poly_b4.remarks_' - "Non-AC 2 berth coupe", 'poly_b4.isLuxury_' - true, 'poly_b4.isAC_' - false
+                    - 'poly_b5.loadFactor_' - 2.00, 'poly_b5.name_' - "AC 2 Tier (2A)", 'poly_b5.remarks_' - "AC 2 berth inside, 2 berth on side", 'poly_b5.isLuxury_' - false, 'poly_b5.isAC_' - true
+                    - 'poly_b6.loadFactor_' - 1.75, 'poly_b6.name_' - "AC 3 Tier (3A)", 'poly_b6.remarks_' - "AC 3 berth inside, 2 berth onside", 'poly_b6.isLuxury_' - false, 'poly_b6.isAC_' - true
+                    - 'poly_b7.loadFactor_' - 1.00, 'poly_b7.name_' - "Sleeper (SL)", 'poly_b7.remarks_' - "Non-AC 3 berth inside, 2 berth onside", 'poly_b7.isLuxury_' - false, 'poly_b7.isAC_' - false
+
+          [D.1.3] Checking Member Functions
+               (1.) For each of the above 'BookingClass' references, check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b1.GetLoadFactor()' - 1.25, 'poly_b1.IsAC()' - true, 'poly_b1.IsSitting()' - true, 'poly_b1.IsLuxury()' - false, 'poly_b1.GetNumberOfTiers()' - 0, 'poly_b1.GetName()' - "AC Chair Car (CC)"
+                    - 'poly_b2.GetLoadFactor()' - 0.50, 'poly_b2.IsAC()' - false, 'poly_b2.IsSitting()' - true, 'poly_b2.IsLuxury()' - false, 'poly_b2.GetNumberOfTiers()' - 0, 'poly_b2.GetName()' - "Second Sitting (2S)"
+                    - 'poly_b3.GetLoadFactor()' - 3.00, 'poly_b3.IsAC()' - true, 'poly_b3.IsSitting()' - false, 'poly_b3.IsLuxury()' - true, 'poly_b3.GetNumberOfTiers()' - 2, 'poly_b3.GetName()' - "AC First Class (1A)"
+                    - 'poly_b4.GetLoadFactor()' - 2.00, 'poly_b4.IsAC()' - false, 'poly_b4.IsSitting()' - false, 'poly_b4.IsLuxury()' - true, 'poly_b4.GetNumberOfTiers()' - 2, 'poly_b4.GetName()' - "First Class (FC)"
+                    - 'poly_b5.GetLoadFactor()' - 2.00, 'poly_b5.IsAC()' - true, 'poly_b5.IsSitting()' - false, 'poly_b5.IsLuxury()' - false, 'poly_b5.GetNumberOfTiers()' - 2, 'poly_b5.GetName()' - "AC 2 Tier (2A)"
+                    - 'poly_b6.GetLoadFactor()' - 1.75, 'poly_b6.IsAC()' - true, 'poly_b6.IsSitting()' - false, 'poly_b6.IsLuxury()' - false, 'poly_b6.GetNumberOfTiers()' - 3, 'poly_b6.GetName()' - "AC 3 Tier (3A)"
+                    - 'poly_b7.GetLoadFactor()' - 1.00, 'poly_b7.IsAC()' - false, 'poly_b7.IsSitting()' - false, 'poly_b7.IsLuxury()' - false, 'poly_b7.GetNumberOfTiers()' - 3, 'poly_b7.GetName()' - "Sleeper (SL)"
+
+          [D.1.4] Static Data Member
+               (1.) Check if the size of 'BookingClass::sLoadFactors' is 7
+               (2.) Check if the values of the load factors of the concrete booking-classes (in non-decreasing order) are correctly
+                    assigned at appropriate indexes
+                    - 'BookingClass::sLoadFactors.at(0)' should be 0.5
+                    - 'BookingClass::sLoadFactors.at(1)' should be 1.0
+                    - 'BookingClass::sLoadFactors.at(2)' should be 1.25
+                    - 'BookingClass::sLoadFactors.at(3)' should be 1.75
+                    - 'BookingClass::sLoadFactors.at(4)' should be 2.0
+                    - 'BookingClass::sLoadFactors.at(5)' should be 2.0
+                    - 'BookingClass::sLoadFactors.at(6)' should be 3.0
+
+[D.2] 'BookingClassSeat'
+
+          [D.2.1] Assigning 'BookingClassSeat' references
+               (1.) Declare 2 'const' references to 'BookingClassSeat' and initalize each one of them to the singleton instance of each 
+                    one of the following concrete booking classes
+                    - BookingClassSeatNoTierAcOrdinary::SpecialBookingClass()             (stored in 'const BookingClassSeat & poly_b1')
+                    - BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass()          (stored in 'const BookingClassSeat & poly_b2')
+          
+          [D.2.2] Checking Attributes
+               (1.) For each of the above 'BookingClassSeat' references, check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_',
+                    'Booking::remarks_', 'Booking::isLuxury_', 'Booking::isAC_') with the true characteristics/properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b1.loadFactor_' - 1.25, 'poly_b1.name_' - "AC Chair Car (CC)", 'poly_b1.remarks_' - "AC chairs", 'poly_b1.isLuxury_' - false, 'poly_b1.isAC_' - true
+                    - 'poly_b2.loadFactor_' - 0.50, 'poly_b2.name_' - "Second Sitting (2S)", 'poly_b2.remarks_' - "Bench seating", 'poly_b2.isLuxury_' - false, 'poly_b2.isAC_' - false
+                    
+          [D.2.3] Checking Member Functions
+               (1.) For each of the above 'BookingClassSeat' references, check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b1.GetLoadFactor()' - 1.25, 'poly_b1.IsAC()' - true, 'poly_b1.IsSitting()' - true, 'poly_b1.IsLuxury()' - false, 'poly_b1.GetNumberOfTiers()' - 0, 'poly_b1.GetName()' - "AC Chair Car (CC)"
+                    - 'poly_b2.GetLoadFactor()' - 0.50, 'poly_b2.IsAC()' - false, 'poly_b2.IsSitting()' - true, 'poly_b2.IsLuxury()' - false, 'poly_b2.GetNumberOfTiers()' - 0, 'poly_b2.GetName()' - "Second Sitting (2S)"
+
+[D.3] 'BookingClassSeatNoTier'
+
+          [D.3.1] Assigning 'BookingClassSeatNoTier' references
+               (1.) Declare 2 'const' references to 'BookingClassSeatNoTier' and initalize each one of them to the singleton instance of each 
+                    one of the following concrete booking classes
+                    - BookingClassSeatNoTierAcOrdinary::SpecialBookingClass()             (stored in 'const BookingClassSeatNoTier & poly_b1')
+                    - BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass()          (stored in 'const BookingClassSeatNoTier & poly_b2')
+          
+          [D.3.2] Checking Attributes
+               (1.) For each of the above 'BookingClassSeatNoTier' references, check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_',
+                    'Booking::remarks_', 'Booking::isLuxury_', 'Booking::isAC_') with the true characteristics/properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b1.loadFactor_' - 1.25, 'poly_b1.name_' - "AC Chair Car (CC)", 'poly_b1.remarks_' - "AC chairs", 'poly_b1.isLuxury_' - false, 'poly_b1.isAC_' - true
+                    - 'poly_b2.loadFactor_' - 0.50, 'poly_b2.name_' - "Second Sitting (2S)", 'poly_b2.remarks_' - "Bench seating", 'poly_b2.isLuxury_' - false, 'poly_b2.isAC_' - false
+                    
+          [D.3.3] Checking Member Functions
+               (1.) For each of the above 'BookingClassSeatNoTier' references, check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b1.GetLoadFactor()' - 1.25, 'poly_b1.IsAC()' - true, 'poly_b1.IsSitting()' - true, 'poly_b1.IsLuxury()' - false, 'poly_b1.GetNumberOfTiers()' - 0, 'poly_b1.GetName()' - "AC Chair Car (CC)"
+                    - 'poly_b2.GetLoadFactor()' - 0.50, 'poly_b2.IsAC()' - false, 'poly_b2.IsSitting()' - true, 'poly_b2.IsLuxury()' - false, 'poly_b2.GetNumberOfTiers()' - 0, 'poly_b2.GetName()' - "Second Sitting (2S)"
+
+[D.4] 'BookingClassBerth'
+
+          [D.4.1] Assigning 'BookingClassBerth' references
+               (1.) Declare 4 'const' references to 'BookingClassBerth' and initalize each one of them to the singleton instance of each one 
+                    of the following concrete booking classes
+                    - BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass()          (stored in 'const BookingClassBerth & poly_b3')
+                    - BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass()       (stored in 'const BookingClassBerth & poly_b4')
+                    - BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass()        (stored in 'const BookingClassBerth & poly_b5')
+                    - BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass()        (stored in 'const BookingClassBerth & poly_b6')
+                    - BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass()     (stored in 'const BookingClassBerth & poly_b7')
+          
+          [D.4.2] Checking Attributes
+               (1.) For each of the above 'BookingClassBerth' references, check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_',
+                    'Booking::remarks_', 'Booking::isLuxury_', 'Booking::isAC_') with the true characteristics/properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b3.loadFactor_' - 3.00, 'poly_b3.name_' - "AC First Class (1A)", 'poly_b3.remarks_' - "AC 2 berth coupe", 'poly_b3.isLuxury_' - true, 'poly_b3.isAC_' - true
+                    - 'poly_b4.loadFactor_' - 2.00, 'poly_b4.name_' - "First Class (FC)", 'poly_b4.remarks_' - "Non-AC 2 berth coupe", 'poly_b4.isLuxury_' - true, 'poly_b4.isAC_' - false
+                    - 'poly_b5.loadFactor_' - 2.00, 'poly_b5.name_' - "AC 2 Tier (2A)", 'poly_b5.remarks_' - "AC 2 berth inside, 2 berth on side", 'poly_b5.isLuxury_' - false, 'poly_b5.isAC_' - true
+                    - 'poly_b6.loadFactor_' - 1.75, 'poly_b6.name_' - "AC 3 Tier (3A)", 'poly_b6.remarks_' - "AC 3 berth inside, 2 berth onside", 'poly_b6.isLuxury_' - false, 'poly_b6.isAC_' - true
+                    - 'poly_b7.loadFactor_' - 1.00, 'poly_b7.name_' - "Sleeper (SL)", 'poly_b7.remarks_' - "Non-AC 3 berth inside, 2 berth onside", 'poly_b7.isLuxury_' - false, 'poly_b7.isAC_' - false
+
+          [D.4.3] Checking Member Functions
+               (1.) For each of the above 'BookingClassBerth' references, check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b3.GetLoadFactor()' - 3.00, 'poly_b3.IsAC()' - true, 'poly_b3.IsSitting()' - false, 'poly_b3.IsLuxury()' - true, 'poly_b3.GetNumberOfTiers()' - 2, 'poly_b3.GetName()' - "AC First Class (1A)"
+                    - 'poly_b4.GetLoadFactor()' - 2.00, 'poly_b4.IsAC()' - false, 'poly_b4.IsSitting()' - false, 'poly_b4.IsLuxury()' - true, 'poly_b4.GetNumberOfTiers()' - 2, 'poly_b4.GetName()' - "First Class (FC)"
+                    - 'poly_b5.GetLoadFactor()' - 2.00, 'poly_b5.IsAC()' - true, 'poly_b5.IsSitting()' - false, 'poly_b5.IsLuxury()' - false, 'poly_b5.GetNumberOfTiers()' - 2, 'poly_b5.GetName()' - "AC 2 Tier (2A)"
+                    - 'poly_b6.GetLoadFactor()' - 1.75, 'poly_b6.IsAC()' - true, 'poly_b6.IsSitting()' - false, 'poly_b6.IsLuxury()' - false, 'poly_b6.GetNumberOfTiers()' - 3, 'poly_b6.GetName()' - "AC 3 Tier (3A)"
+                    - 'poly_b7.GetLoadFactor()' - 1.00, 'poly_b7.IsAC()' - false, 'poly_b7.IsSitting()' - false, 'poly_b7.IsLuxury()' - false, 'poly_b7.GetNumberOfTiers()' - 3, 'poly_b7.GetName()' - "Sleeper (SL)"
+
+[D.5] 'BookingClassBerthDoubleTier'
+
+          [D.5.1] Assigning 'BookingClassBerthDoubleTier' references
+               (1.) Declare 3 'const' references to 'BookingClassBerthDoubleTier' and initalize each one of them to the singleton instance of each  
+                    one of the following concrete booking classes
+                    - BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass()          (stored in 'const BookingClassBerthDoubleTier & poly_b3')
+                    - BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass()       (stored in 'const BookingClassBerthDoubleTier & poly_b4')
+                    - BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass()        (stored in 'const BookingClassBerthDoubleTier & poly_b5')
+          
+          [D.5.2] Checking Attributes
+               (1.) For each of the above 'BookingClassBerthDoubleTier' references, check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_',
+                    'Booking::remarks_', 'Booking::isLuxury_', 'Booking::isAC_') with the true characteristics/properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b3.loadFactor_' - 3.00, 'poly_b3.name_' - "AC First Class (1A)", 'poly_b3.remarks_' - "AC 2 berth coupe", 'poly_b3.isLuxury_' - true, 'poly_b3.isAC_' - true
+                    - 'poly_b4.loadFactor_' - 2.00, 'poly_b4.name_' - "First Class (FC)", 'poly_b4.remarks_' - "Non-AC 2 berth coupe", 'poly_b4.isLuxury_' - true, 'poly_b4.isAC_' - false
+                    - 'poly_b5.loadFactor_' - 2.00, 'poly_b5.name_' - "AC 2 Tier (2A)", 'poly_b5.remarks_' - "AC 2 berth inside, 2 berth on side", 'poly_b5.isLuxury_' - false, 'poly_b5.isAC_' - true
+
+          [D.5.3] Checking Member Functions
+               (1.) For each of the above 'BookingClassBerthDoubleTier' references, check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b3.GetLoadFactor()' - 3.00, 'poly_b3.IsAC()' - true, 'poly_b3.IsSitting()' - false, 'poly_b3.IsLuxury()' - true, 'poly_b3.GetNumberOfTiers()' - 2, 'poly_b3.GetName()' - "AC First Class (1A)"
+                    - 'poly_b4.GetLoadFactor()' - 2.00, 'poly_b4.IsAC()' - false, 'poly_b4.IsSitting()' - false, 'poly_b4.IsLuxury()' - true, 'poly_b4.GetNumberOfTiers()' - 2, 'poly_b4.GetName()' - "First Class (FC)"
+                    - 'poly_b5.GetLoadFactor()' - 2.00, 'poly_b5.IsAC()' - true, 'poly_b5.IsSitting()' - false, 'poly_b5.IsLuxury()' - false, 'poly_b5.GetNumberOfTiers()' - 2, 'poly_b5.GetName()' - "AC 2 Tier (2A)"
+     
+
+[D.6] 'BookingClassBerthTripleTier'
+
+          [D.6.1] Assigning 'BookingClassBerthTripleTier' references
+               (1.) Declare 2 'const' references to 'BookingClassBerthTripleTier' and initalize each one of them to the singleton instance of 
+                    each one of the following concrete booking classes
+                    - BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass()        (stored in 'const BookingClassBerthTripleTier & poly_b6')
+                    - BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass()     (stored in 'const BookingClassBerthTripleTier & poly_b7')
+          
+          [D.6.2] Checking Attributes
+               (1.) For each of the above 'BookingClassBerthTripleTier' references, check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_',
+                    'Booking::remarks_', 'Booking::isLuxury_', 'Booking::isAC_') with the true characteristics/properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b6.loadFactor_' - 1.75, 'poly_b6.name_' - "AC 3 Tier (3A)", 'poly_b6.remarks_' - "AC 3 berth inside, 2 berth onside", 'poly_b6.isLuxury_' - false, 'poly_b6.isAC_' - true
+                    - 'poly_b7.loadFactor_' - 1.00, 'poly_b7.name_' - "Sleeper (SL)", 'poly_b7.remarks_' - "Non-AC 3 berth inside, 2 berth onside", 'poly_b7.isLuxury_' - false, 'poly_b7.isAC_' - false
+
+          [D.6.3] Checking Member Functions
+               (1.) For each of the above 'BookingClassBerthTripleTier' references, check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class
+                    Check the accuracy of the following golden outputs
+                    - 'poly_b6.GetLoadFactor()' - 1.75, 'poly_b6.IsAC()' - true, 'poly_b6.IsSitting()' - false, 'poly_b6.IsLuxury()' - false, 'poly_b6.GetNumberOfTiers()' - 3, 'poly_b6.GetName()' - "AC 3 Tier (3A)"
+                    - 'poly_b7.GetLoadFactor()' - 1.00, 'poly_b7.IsAC()' - false, 'poly_b7.IsSitting()' - false, 'poly_b7.IsLuxury()' - false, 'poly_b7.GetNumberOfTiers()' - 3, 'poly_b7.GetName()' - "Sleeper (SL)"
+
+[D.7] 'BookingClassSeatNoTierAcOrdinary'
+
+          [D.7.1] Assigning 'BookingClassSeatNoTierAcOrdinary' reference
+               (1.) Declare 'const' reference to 'BookingClassSeatNoTierAcOrdinary' and initalize it to the singleton instance of the booking class
+                    'BookingClassSeatNoTierAcOrdinary'
+                    "const BookingClassSeatNoTierAcOrdinary & b1 = BookingClassSeatNoTierAcOrdinary::SpecialBookingClass();"
+          
+          [D.7.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassSeatNoTierAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 1.25
+                    - value of 'b1.name_' is "AC Chair Car (CC)"
+                    - value of 'b1.remarks_' is "AC chairs"
+                    - value of 'b1.isLuxury_' is false
+                    - value of 'b1.isAC_' is true
+          
+          [D.7.3] Checking Singleton Class
+
+                    [D.7.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassSeatNoTierAcOrdinary::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassSeatNoTierAcOrdinary' reference
+                                   "const BookingClassSeatNoTierAcOrdinary & b2 = BookingClassSeatNoTierAcOrdinary::SpecialBookingClass();"
+                              (2.) Repeat the test [D.7.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.7.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassSeatNoTierAcOrdinary::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassSeatNoTierAcOrdinary' reference
+                                   "const BookingClassSeatNoTierAcOrdinary & b3 = 
+                                                       BookingClassSeatNoTierAcOrdinary::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.7.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.7.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassSeatNoTierAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 1.25
+                    - value returned by 'b1.GetName()' is "AC Chair Car (CC)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 0
+                    - value returned by 'b1.IsAC()' is true
+                    - value returned by 'b1.IsLuxury()' is false
+                    - value returned by 'b1.IsSitting()' is true
+
+          [D.7.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassSeatNoTierAcOrdinary::sLoadFactor' is 1.25
+          
+          [D.7.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassSeatNoTierAcOrdinary' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassSeatNoTierAcOrdinary' instance in a chain (like "cout << b1 << b2;")
+
+[D.8] 'BookingClassSeatNoTierNonAcOrdinary'
+
+          [D.8.1] Assigning 'BookingClassSeatNoTierNonAcOrdinary' reference
+               (1.) Declare 'const' reference to 'BookingClassSeatNoTierNonAcOrdinary' and initalize it to the singleton instance of the booking class
+                    'BookingClassSeatNoTierNonAcOrdinary'
+                    "const BookingClassSeatNoTierNonAcOrdinary & b1 = BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass();"
+          
+          [D.8.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassSeatNoTierNonAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 0.5
+                    - value of 'b1.name_' is "Second Sitting (2S)"
+                    - value of 'b1.remarks_' is "Bench seating"
+                    - value of 'b1.isLuxury_' is false
+                    - value of 'b1.isAC_' is false
+          
+          [D.8.3] Checking Singleton Class
+
+                    [D.8.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassSeatNoTierNonAcOrdinary' reference
+                                   "const BookingClassSeatNoTierNonAcOrdinary & b2 = BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass();"
+                              (2.) Repeat the test [D.8.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.8.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassSeatNoTierNonAcOrdinary' reference
+                                   "const BookingClassSeatNoTierNonAcOrdinary & b3 = 
+                                                       BookingClassSeatNoTierNonAcOrdinary::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.8.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.8.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassSeatNoTierNonAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 0.5
+                    - value returned by 'b1.GetName()' is "Second Sitting (2S)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 0
+                    - value returned by 'b1.IsAC()' is false
+                    - value returned by 'b1.IsLuxury()' is false
+                    - value returned by 'b1.IsSitting()' is true
+
+          [D.8.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassSeatNoTierNonAcOrdinary::sLoadFactor' is 0.5
+          
+          [D.8.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassSeatNoTierNonAcOrdinary' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassSeatNoTierNonAcOrdinary' instance in a chain (like "cout << b1 << b2;")
+
+[D.9] 'BookingClassBerthDoubleTierAcLuxury'
+
+          [D.9.1] Assigning 'BookingClassBerthDoubleTierAcLuxury' reference
+               (1.) Declare 'const' reference to 'BookingClassBerthDoubleTierAcLuxury' and initalize it to the singleton instance of the booking class
+                    'BookingClassBerthDoubleTierAcLuxury'
+                    "const BookingClassBerthDoubleTierAcLuxury & b1 = BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass();"
+          
+          [D.9.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassBerthDoubleTierAcLuxury'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 3.0
+                    - value of 'b1.name_' is "AC First Class (1A)"
+                    - value of 'b1.remarks_' is "AC 2 berth coupe"
+                    - value of 'b1.isLuxury_' is true
+                    - value of 'b1.isAC_' is true
+          
+          [D.9.3] Checking Singleton Class
+
+                    [D.9.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthDoubleTierAcLuxury' reference
+                                   "const BookingClassBerthDoubleTierAcLuxury & b2 = BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass();"
+                              (2.) Repeat the test [D.9.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.9.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthDoubleTierAcLuxury' reference
+                                   "const BookingClassBerthDoubleTierAcLuxury & b3 = 
+                                                       BookingClassBerthDoubleTierAcLuxury::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.9.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.9.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassBerthDoubleTierAcLuxury'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 3.0
+                    - value returned by 'b1.GetName()' is "Second Sitting (2S)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 2
+                    - value returned by 'b1.IsAC()' is true
+                    - value returned by 'b1.IsLuxury()' is true
+                    - value returned by 'b1.IsSitting()' is false
+
+          [D.9.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassBerthDoubleTierAcLuxury::sLoadFactor' is 3.0
+          
+          [D.9.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassBerthDoubleTierAcLuxury' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassBerthDoubleTierAcLuxury' instance in a chain (like "cout << b1 << b2;")
+
+[D.10] 'BookingClassBerthDoubleTierAcOrdinary'
+
+          [D.10.1] Assigning 'BookingClassBerthDoubleTierAcOrdinary' reference
+               (1.) Declare 'const' reference to 'BookingClassBerthDoubleTierAcOrdinary' and initalize it to the singleton instance of the booking class
+                    'BookingClassBerthDoubleTierAcOrdinary'
+                    "const BookingClassBerthDoubleTierAcOrdinary & b1 = BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass();"
+          
+          [D.10.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassBerthDoubleTierAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 2.0
+                    - value of 'b1.name_' is "AC 2 Tier (2A)"
+                    - value of 'b1.remarks_' is "AC 2 berth inside, 2 berth on side"
+                    - value of 'b1.isLuxury_' is false
+                    - value of 'b1.isAC_' is true
+          
+          [D.10.3] Checking Singleton Class
+
+                    [D.10.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthDoubleTierAcOrdinary' reference
+                                   "const BookingClassBerthDoubleTierAcOrdinary & b2 = BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass();"
+                              (2.) Repeat the test [D.10.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.10.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthDoubleTierAcOrdinary' reference
+                                   "const BookingClassBerthDoubleTierAcOrdinary & b3 = 
+                                                       BookingClassBerthDoubleTierAcOrdinary::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.10.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.10.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassBerthDoubleTierAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 2.0
+                    - value returned by 'b1.GetName()' is "AC 2 Tier (2A)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 2
+                    - value returned by 'b1.IsAC()' is true
+                    - value returned by 'b1.IsLuxury()' is false
+                    - value returned by 'b1.IsSitting()' is false
+
+          [D.10.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassBerthDoubleTierAcOrdinary::sLoadFactor' is 2.0
+          
+          [D.10.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassBerthDoubleTierAcOrdinary' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassBerthDoubleTierAcOrdinary' instance in a chain (like "cout << b1 << b2;")
+
+[D.11] 'BookingClassBerthDoubleTierNonAcLuxury'
+
+          [D.11.1] Assigning 'BookingClassBerthDoubleTierNonAcLuxury' reference
+               (1.) Declare 'const' reference to 'BookingClassBerthDoubleTierNonAcLuxury' and initalize it to the singleton instance of the booking class
+                    'BookingClassBerthDoubleTierNonAcLuxury'
+                    "const BookingClassBerthDoubleTierNonAcLuxury & b1 = BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass();"
+          
+          [D.11.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassBerthDoubleTierNonAcLuxury'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 2.0
+                    - value of 'b1.name_' is "First Class (FC)"
+                    - value of 'b1.remarks_' is "Non-AC 2 berth coupe"
+                    - value of 'b1.isLuxury_' is true
+                    - value of 'b1.isAC_' is false
+          
+          [D.11.3] Checking Singleton Class
+
+                    [D.11.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthDoubleTierNonAcLuxury' reference
+                                   "const BookingClassBerthDoubleTierNonAcLuxury & b2 = BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass();"
+                              (2.) Repeat the test [D.11.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.11.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthDoubleTierNonAcLuxury' reference
+                                   "const BookingClassBerthDoubleTierNonAcLuxury & b3 = 
+                                                       BookingClassBerthDoubleTierNonAcLuxury::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.11.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.11.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassBerthDoubleTierNonAcLuxury'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 2.0
+                    - value returned by 'b1.GetName()' is "First Class (FC)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 2
+                    - value returned by 'b1.IsAC()' is false
+                    - value returned by 'b1.IsLuxury()' is true
+                    - value returned by 'b1.IsSitting()' is false
+
+          [D.11.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassBerthDoubleTierNonAcLuxury::sLoadFactor' is 2.0
+          
+          [D.11.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassBerthDoubleTierNonAcLuxury' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassBerthDoubleTierNonAcLuxury' instance in a chain (like "cout << b1 << b2;")
+
+[D.12] 'BookingClassBerthTripleTierAcOrdinary'
+
+          [D.12.1] Assigning 'BookingClassBerthTripleTierAcOrdinary' reference
+               (1.) Declare 'const' reference to 'BookingClassBerthTripleTierAcOrdinary' and initalize it to the singleton instance of the booking class
+                    'BookingClassBerthTripleTierAcOrdinary'
+                    "const BookingClassBerthTripleTierAcOrdinary & b1 = BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass();"
+          
+          [D.12.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassBerthTripleTierAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 1.75
+                    - value of 'b1.name_' is "AC 3 Tier (3A)"
+                    - value of 'b1.remarks_' is "AC 3 berth inside, 2 berth onside"
+                    - value of 'b1.isLuxury_' is false
+                    - value of 'b1.isAC_' is true
+          
+          [D.12.3] Checking Singleton Class
+
+                    [D.12.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthTripleTierAcOrdinary' reference
+                                   "const BookingClassBerthTripleTierAcOrdinary & b2 = BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass();"
+                              (2.) Repeat the test [D.12.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.12.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthTripleTierAcOrdinary' reference
+                                   "const BookingClassBerthTripleTierAcOrdinary & b3 = 
+                                                       BookingClassBerthTripleTierAcOrdinary::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.12.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.12.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassBerthTripleTierAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 1.75
+                    - value returned by 'b1.GetName()' is "AC 3 Tier (3A)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 3
+                    - value returned by 'b1.IsAC()' is true
+                    - value returned by 'b1.IsLuxury()' is false
+                    - value returned by 'b1.IsSitting()' is false
+
+          [D.12.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassBerthTripleTierAcOrdinary::sLoadFactor' is 1.75
+          
+          [D.12.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassBerthTripleTierAcOrdinary' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassBerthTripleTierAcOrdinary' instance in a chain (like "cout << b1 << b2;")
+
+[D.13] 'BookingClassBerthTripleTierNonAcOrdinary'
+
+          [D.13.1] Assigning 'BookingClassBerthTripleTierNonAcOrdinary' reference
+               (1.) Declare 'const' reference to 'BookingClassBerthTripleTierNonAcOrdinary' and initalize it to the singleton instance of the booking class
+                    'BookingClassBerthTripleTierNonAcOrdinary'
+                    "const BookingClassBerthTripleTierNonAcOrdinary & b1 = BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass();"
+          
+          [D.13.2] Checking Attributes
+               (1.) Check the values of the attributes ('BookingClass::loadFactor_', 'BookingClass::name_', 'Booking::remarks_', 'Booking::isLuxury_',
+                    'Booking::isAC_') with the true characteristics/properties of the booking-class 'BookingClassBerthTripleTierNonAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value of 'b1.loadFactor_' is 1.0
+                    - value of 'b1.name_' is "Sleeper (SL)"
+                    - value of 'b1.remarks_' is "Non-AC 3 berth inside, 2 berth onside"
+                    - value of 'b1.isLuxury_' is false
+                    - value of 'b1.isAC_' is false
+          
+          [D.13.3] Checking Singleton Class
+
+                    [D.13.3.1] Re-attempt construction with default parameters
+                              (1.) Make another call to 'BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass' without any parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthTripleTierNonAcOrdinary' reference
+                                   "const BookingClassBerthTripleTierNonAcOrdinary & b2 = BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass();"
+                              (2.) Repeat the test [D.13.2] for 'b2' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b2' and check if they are equal
+                    
+                    [D.13.3.2] Attempt construction with the passed parameters
+                              (1.) Make another call to 'BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass' with any arbitrary parameters and store
+                                   the returned value in a 'const' 'BookingClassBerthTripleTierNonAcOrdinary' reference
+                                   "const BookingClassBerthTripleTierNonAcOrdinary & b3 = 
+                                                       BookingClassBerthTripleTierNonAcOrdinary::SpecialBookingClass("My Booking Class", "No Remarks");"
+                              (2.) Repeat the test [D.13.2] for 'b3' in place of 'b1' to ensure that the returned instance has the same properties
+                                   as the former
+                              (3.) Compare the addresses of 'b1' and 'b3' and check if they are equal
+
+          [D.13.4] Checking Member Functions
+               (1.) Check the values returned by the member functions ('BookingClass::GetLoadFactor', 'BookingClass::GetName', 
+                    'BookingClass::IsAC', 'BookingClass::IsSitting', 'BookingClass::IsLuxury', 'BookingClass::GetNumberOfTiers') and compare them with the true characteristics/
+                    properties of the booking-class 'BookingClassBerthTripleTierNonAcOrdinary'
+                    Check the accuracy of the following golden outputs
+                    - value returned by 'b1.GetLoadFactor()' is 1.0
+                    - value returned by 'b1.GetName()' is "Sleeper (SL)"
+                    - value returned by 'b1.GetNumberOfTiers()' is 3
+                    - value returned by 'b1.IsAC()' is false
+                    - value returned by 'b1.IsLuxury()' is false
+                    - value returned by 'b1.IsSitting()' is false
+
+          [D.13.5] Checking Static Constant Data Member
+               (1.) Check if value of 'BookingClassBerthTripleTierNonAcOrdinary::sLoadFactor' is 1.0
+          
+          [D.13.6] Checking Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const BookingClass &)
+               (1.) Output stream a single reference to the singleton 'BookingClassBerthTripleTierNonAcOrdinary' instance (like "cout << b;")
+               (2.) Output stream multiple references to the singleton 'BookingClassBerthTripleTierNonAcOrdinary' instance in a chain (like "cout << b1 << b2;")
+
+
+
+[E] UNIT TEST PLAN -- 'Passenger' CLASS
+
+[E.1]   Constructors
+
+          [E.1.1]   Passenger::Passenger(const std::__cxx11::string &, const std::__cxx11::string &, const Date &, 
+                                         Passenger::Gender, Passenger::Category, const std::__cxx11::string & = "NA")
+                    
+                    [E.1.1.1] Calling constructor without sixth parameter
+                              (1.) Construct an instance of 'Passenger' class by passing any 5 parameters to the constructor
+                                   of appropriate data types
+                              (2.) Check the data members 'Passenger::name_', 'Passenger::dateOfBirth_', 'Passenger::adhaarNumber_',
+                                   'Passenger::gender_' and 'Passenger::category_' of the object and match them with the passed 
+                                   arguements. Match data member 'Passenger::mobileNumber_' with the default parameter, "NA"
+                    
+                    [E.1.1.2] Calling constructor with sixth parameter
+                              (1.) Construct an instance of 'Passenger' class by passing any 6 parameters to the constructor
+                                   of appropriate data types
+                              (2.) Check the data members 'Passenger::name_', 'Passenger::dateOfBirth_', 'Passenger::adhaarNumber_',
+                                   'Passenger::gender_', 'Passenger::category_' and 'Passenger::mobileNumber_' of the object and 
+                                   match them with the passed arguements.
+
+          [E.1.2]   Passenger::Passenger(const Passenger &)
+
+                    (1.) Construct an instance of 'Passenger' by passing the object constructed in [E.1.1.2](1.) as parameter.
+                    (2.) Compare the data members 'Passenger::name_', 'Passenger::dateOfBirth_', 'Passenger::adhaarNumber_',
+                         'Passenger::gender_', 'Passenger::category_' and 'Passenger::mobileNumber_' of the object with the one 
+                         that was passed as a parameter.
+
+[E.2]   Operators
+
+          [E.2.1]     Copy Assignment Operator -- Passenger &Passenger::operator=(const Passenger &)
+                    (1.) Copy the 'Passenger' object that was constructed in [E.1.1.1](1.) to the object that was constructed
+                         in [E.1.1.2](1.)
+                    (2.) Compare the data members 'Passenger::name_', 'Passenger::dateOfBirth_', 'Passenger::adhaarNumber_',
+                         'Passenger::gender_', 'Passenger::category_' and 'Passenger::mobileNumber_' of the two objects
+        
+          [E.2.2]     Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const Passenger &)
+                         (1.) Output stream a single 'Passenger' instance (like "cout << p;")
+                         (2.) Output stream multiple 'Passenger' instances in a chain (like "cout << p1 << p2;")
+
+
+
+[F] UNIT TEST PLAN -- 'Booking' CLASS
+
+[F.1]   Constructors
+
+          [F.1.1]   Booking::Booking(const Station &, const Station &, const Date &, const BookingClass &, const Passenger * = NULL)
+                    
+                    [F.1.1.1] Construction
+                              (1.) Construct 7 instances of 'Booking' class each having a different booking class, keeping the two
+                                   terminal stations intact (say "Mumbai" and "Delhi") and any arbitrary date while keeping track of 
+                                   the static data member 'Booking::sBookingPNRSerial' before/after every instantiation.
+                                   (Let the instances be 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7' respectively)
+                    
+                    [F.1.1.2] Non-Static Data Members
+                              (1.) For each of the 7 objects, check the values of the data members 'Booking::fromStation_', 
+                                   'Booking::toStation_', 'Booking::dateOfTravel_', 'Booking::bookingClass_' and 'Booking::passenger_'
+                                   and compare them with the values passed as parameters to the constructor.
+                                   (Compare 'Booking::passenger_' with NULL and 'Booking::bookingClass_' with the "address" of the 
+                                   instance of the concrete booking class that is passed as parameter)
+                              (2.) Check the "serialization" of PNR numbers ('Booking::pnr_') of the bookings
+                                   - check if value of 'b1.pnr_' is 1
+                                   - check if value of 'b2.pnr_' is 2
+                                   - check if value of 'b3.pnr_' is 3
+                                   - check if value of 'b4.pnr_' is 4
+                                   - check if value of 'b5.pnr_' is 5
+                                   - check if value of 'b6.pnr_' is 6
+                                   - check if value of 'b7.pnr_' is 7
+                    
+                    [F.1.1.3] Non-const Static Data Members
+
+                              (1.) Check if the static data member 'Booking::sBookingPNRSerial' is getting properly incremented
+                                   after every instantiation of 'Booking'
+                                   - check if value of 'Booking::sBookingPNRSerial' before instantiating 'b1' was 1
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b1' was 2
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b2' was 3
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b3' was 4
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b4' was 5
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b5' was 6
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b6' was 7
+                                   - check if value of 'Booking::sBookingPNRSerial' after instantiating 'b7' was 8
+                              (2.) Check if the static data member 'Booking::sBookings' is properly updated after each instantiation
+                                   - check if size of 'Booking::sBookings' is 7
+                                   - check if value returned by 'Booking::sBookings.at(0)' is equal to '&b1'
+                                   - check if value returned by 'Booking::sBookings.at(1)' is equal to '&b2'
+                                   - check if value returned by 'Booking::sBookings.at(2)' is equal to '&b3'
+                                   - check if value returned by 'Booking::sBookings.at(3)' is equal to '&b4'
+                                   - check if value returned by 'Booking::sBookings.at(4)' is equal to '&b5'
+                                   - check if value returned by 'Booking::sBookings.at(5)' is equal to '&b6'
+                                   - check if value returned by 'Booking::sBookings.at(6)' is equal to '&b7'
+
+          [F.1.2]   Booking::Booking(const Booking &)
+                    
+                    [F.1.2.1] Construction
+                              (1.) Instantiate a 'Booking' class instance, 'b8', as a copy of instance 'b1' (in [F.1.1.1](1.))
+                    
+                    [F.1.2.2] Non-Static Data Members
+                              (1.) Compare the values of the attributes -- 'Booking::fromStation_', 'Booking::toStation_', 
+                                   'Booking::dateOfTravel_', 'Booking::bookingClass_', 'Booking::passenger_', 'Booking::fare_',
+                                   'Booking::bookingStatus_', 'Booking::bookingMessage_' of both 'b1' and 'b8'
+                              (2.) Check if value of 'b8.pnr_' is 8
+
+                    [F.1.2.3] Non-const Static Data Members
+                              (1.) Check if the value of static data member 'Booking::sBookingPNRSerial' is 9
+                              (2.) Check if the static data member 'Booking::sBookings' is properly updated after this instantiation
+                                   - check if size of 'Booking::sBookings' is 8
+                                   - check if value returned by 'Booking::sBookings.at(7)' is equal to '&b8'
+
+[F.2] Static Constant Data Members
+
+          (1.) Check if the constant static data members ('Booking::sBaseFarePerKM', 'Booking::sACSurcharge', 
+               'Booking::sLuxuryTaxPercent') were initialized correctly
+               - check if value of 'Booking::sBaseFarePerKM' is 0.5
+               - check if value of 'Booking::sACSurcharge' is 50.00
+               - check if value of 'Booking::sLuxuryTaxPercent' is 25.00
+
+[F.3]   Operators
+
+          [F.3.1]   Copy Assignment Operator -- Booking &Booking::operator=(const Booking &)
+                    (1.) Before copying, store the values of static data members 'Booking::sBookingPNRSerial' and
+                         'Booking::sBookings' in some variables, say 'next_pnr_before_copy' and 'sBookings_before_copy'
+                         of same data type
+                    (2.) Copy 'b2' to 'b8' ("b8=b2;")
+                    (3.) Compare the values of the attributes -- 'Booking::fromStation_', 'Booking::toStation_', 
+                         'Booking::dateOfTravel_', 'Booking::bookingClass_', 'Booking::passenger_', 'Booking::fare_',
+                         'Booking::bookingStatus_', 'Booking::bookingMessage_', 'Booking::pnr_' of both 'b2' and 'b8'
+                    (4.) Check if the non-const static data members have stayed intact
+                         - check if value of 'Booking::sBookingPNRSerial' is same as 'next_pnr_before_copy'
+                         - check if value of 'Booking::sBookings' is same as 'sBookings_before_copy'
+
+          [F.3.2]   Output Streaming Operator -- std::ostream &operator<<(std::ostream &, const Booking &)
+                    (1.) Output stream a single 'Booking' instance (like "cout << b;") for which the data member
+                         'Booking::passenger_' is NULL
+                    (2.) Output stream a single 'Booking' instance (like "cout << b;") for which the data member
+                         'Booking::passenger_' is not NULL
+                    (3.) Output stream multiple 'Booking' instances in a chain (like "cout << b1 << b2;")
+
+[F.4]   Member Function -- int Booking::ComputeFair() const
+          
+          [F.4.1]   Keep the unordered pair of terminal stations constant and vary the booking class
+                    (Consider the 'Booking' objects instantiated in [F.1.1.1](1.))
+                    (1.) For all the 'Booking' objects, compare the value of data member 'Booking::fare_' with 
+                         the manually calculated values
+                         - check if value of b1.fare_ is same as 954
+                         - check if value of b2.fare_ is same as 362
+                         - check if value of b3.fare_ is same as 2776
+                         - check if value of b4.fare_ is same as 1497
+                         - check if value of b5.fare_ is same as 1809
+                         - check if value of b6.fare_ is same as 1316
+                         - check if value of b7.fare_ is same as 724
+
+          [F.4.1]   Change the unordered pair of terminal stations, keep it constant and vary the booking class
+                    (1.) Construct 7 instances of 'Booking' class each having a different booking class, keeping the two
+                         terminal stations intact (say "Bangalore" and "Chennai") and any arbitrary date.
+                         (Let the instances be 'b9', 'b10', 'b11', 'b12', 'b13', 'b14', 'b15' respectively)
+                    (2.) For all these 'Booking' objects, compare the value of data member 'Booking::fare_' with 
+                         the manually calculated values
+                         - check if value of b9.fare_ is same as 269
+                         - check if value of b10.fare_ is same as 88
+                         - check if value of b11.fare_ is same as 719
+                         - check if value of b12.fare_ is same as 400
+                         - check if value of b13.fare_ is same as 438
+                         - check if value of b14.fare_ is same as 356
+                         - check if value of b15.fare_ is same as 175
+
+          [F.4.1]   Vary the unordered pair of terminal stations, keep the booking class constant
+                    (1.) Construct 8 instances of 'Booking' class (with arbitrary date) each having the same booking class (say 
+                         'BookingClassBerthTripleTierNonAcOrdinary') and a different unordered pair of terminal stations (except
+                         <Mumbai, Delhi> and <Bangalore, Chennai> because they are already covered)
+                         (Let the instances be 'b16', 'b17', 'b18', 'b19', 'b20', 'b21', 'b22', 'b23' respectively)
+                    (2.) For all these 'Booking' objects, compare the value of data member 'Booking::fare_' with 
+                         the manually calculated values
+                         - check if value of b16.fare_ is same as 669
+                         - check if value of b17.fare_ is same as 830
+                         - check if value of b18.fare_ is same as 1007
+                         - check if value of b19.fare_ is same as 491
+                         - check if value of b20.fare_ is same as 736
+                         - check if value of b21.fare_ is same as 1090
+                         - check if value of b22.fare_ is same as 1075
+                         - check if value of b23.fare_ is same as 936
+
+[F.5]   Destructor  --   Booking::~Booking()
+
+          (1.) Before destructing any instance of 'Booking' class (say 'b1') store the size of static data member
+               'Booking::sBookings' in 'size_sBooking_before_dtor' and value of 'Booking::sBookingPNRSerial' in
+               'next_pnr_before_dtor'
+          (2.) Destruct 'b1' by explicitly calling the destructor on it
+          (3.) Check if the value of 'Booking::sBookingPNRSerial' is same as 'next_pnr_before_dtor'
+          (4.) Check if the size of 'Booking::sBookings' is one less than 'size_sBooking_before_dtor'
+          (5.) Ensure if an element '&b1' is not present in 'Booking::sBookings'
+
+
+
+[G] APPLICATION TEST
+
+[G.1]     Scenario O1 -- Application uses the default Indian railways
+          (1.) There are 5 stations in the Indian railways. There can be 20 ordered pairs of stations
+               with different terminals. Treat each such pair of terminal stations a sub-scenario
+               and exhaustively construct 7 'Booking' instances for each one of them with different
+               booking-classes (do not pass pointer to a 'Passenger' object in this scenario)
+          (2.) Use the overloaded output streaming operator to print all the 140 'Booking' instances
+
+[G.2]     Scenario O2 -- Application uses its own custom railways with same booking-classes
+          (1.) Choose any number of arbitrary stations from any arbitrary railways network in the world.
+               Say, "European Railways" with stations -- "Amsterdam", "Athen", "Berlin" and "Brussels"
+          (2.) Construct 4 'Station' objects with these names and stores them in a 'vector'. Store the
+               pairwise distances between the stations in a 'map' (see the master data below)
+                 { {<...STATION 1...>, <...STATION 2...>}, <...DISTANCE...> }
+               - { {"Amsterdam", "Berlin"}, 649 }
+               - { {"Amsterdam", "Brussels"}, 209 }
+               - { {"Amsterdam", "Athens"}, 3082 }
+               - { {"Athens", "Berlin"}, 2552 }
+               - { {"Athens", "Brussels"}, 3021 }
+               - { {"Berlin", "Brussels"}, 782 }
+               Use 'Railways::SpecialRailways' method to construct the singleton 'Railways' instance based on
+               "European Railways" by passing these two data structures as parameters
+          (3.) There are 4 stations in the European railways. There can be 12 ordered pairs of stations
+               with different terminals. Treat each such pair of terminal stations a sub-scenario
+               and exhaustively construct 7 'Booking' instances for each one of them with different
+               booking-classes (do not pass pointer to a 'Passenger' object in this scenario)
+          (4.) Use the overloaded output streaming operator to print all the 84 'Booking' instances
+
+[G.3]     Scenario O3 -- Application uses 'Passenger' objects to do bookings
+          (1.) Construct 8 objects of 'Passenger' class, while trying to maintain variety in the
+               parameters (cover all values for the enumerated data types 'Passenger::Gender' and
+               'Passenger::Category'; pass the sixth parameter for few and not for others)
+          (2.) Construct 8 objects of 'Booking' class, using pointers to different 'Passenger' objects,
+               covering all the booking-classes and using variety of pairs of terminal stations
+          (3.) Iterate over the static data member 'Booking::sBookings' and print all the 8 'Booking'
+               instances using the overloaded output streaming operator

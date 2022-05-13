@@ -1,0 +1,2513 @@
+
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Chennai
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+	+++ ENTERED main +++
+
+	+++ WELCOME TO TEST BOOKING APPLICATION +++
+
+BookingClass SUB-TYPE CONSTRUCTED : AC First Class
+BookingClass SUB-TYPE CONSTRUCTED : Executive Chair Car
+BookingClass SUB-TYPE CONSTRUCTED : AC 2 Tier
+BookingClass SUB-TYPE CONSTRUCTED : First Class
+BookingClass SUB-TYPE CONSTRUCTED : AC 3 Tier
+BookingClass SUB-TYPE CONSTRUCTED : AC Chair Car
+BookingClass SUB-TYPE CONSTRUCTED : Sleeper
+BookingClass SUB-TYPE CONSTRUCTED : Second Sitting
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Gender SUB-TYPE CONSTRUCTED : Male
+Date CONSTRUCTED : 01/Jan/2000
+BookingCategory SUB-TYPE CONSTRUCTED : General
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Chennai
+Railways CONSTRUCTED : Indian Railways
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 1
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 1
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC First Class
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 4763
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 2
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 2
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 3678
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 3
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 3
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC 2 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Booking Category = General
+ Fare = 2944
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 4
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 4
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 2221
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 5
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 5
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC 3 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1849
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 6
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 6
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Booking Category = General
+ Fare = 1487
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 7
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 7
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 744
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 8
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 8
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Second Sitting
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Booking Category = General
+ Fare = 449
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 9
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 9
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 3678
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Gender SUB-TYPE CONSTRUCTED : Female
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 10
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 10
+ From Station = Delhi
+ To Station = Mumbai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 3678
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 11
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 11
+ From Station = Mumbai
+ To Station = Bangalore
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 1522
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 12
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Mumbai
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 12
+ From Station = Bangalore
+ To Station = Mumbai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 1522
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 13
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Kolkata
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 13
+ From Station = Mumbai
+ To Station = Kolkata
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1027
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 14
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Mumbai
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 14
+ From Station = Kolkata
+ To Station = Mumbai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1027
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 15
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Chennai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 15
+ From Station = Mumbai
+ To Station = Chennai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC 3 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1713
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 16
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Mumbai
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 16
+ From Station = Chennai
+ To Station = Mumbai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = AC 3 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1713
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 17
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 17
+ From Station = Delhi
+ To Station = Bangalore
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 5435
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 18
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 18
+ From Station = Bangalore
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 5435
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 19
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Kolkata
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 19
+ From Station = Delhi
+ To Station = Kolkata
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC 3 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1880
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 20
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 20
+ From Station = Kolkata
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = AC 3 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1880
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 21
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Chennai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 21
+ From Station = Delhi
+ To Station = Chennai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1110
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 22
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 22
+ From Station = Chennai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 1110
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 23
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Kolkata
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 23
+ From Station = Bangalore
+ To Station = Kolkata
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 956
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 24
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 24
+ From Station = Kolkata
+ To Station = Bangalore
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = General
+ Fare = 956
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 25
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Chennai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 25
+ From Station = Bangalore
+ To Station = Chennai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC 2 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Booking Category = General
+ Fare = 750
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 26
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 26
+ From Station = Chennai
+ To Station = Bangalore
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = AC 2 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Booking Category = General
+ Fare = 750
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 27
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Chennai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 27
+ From Station = Kolkata
+ To Station = Chennai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = AC First Class
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 5452
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Sep/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 01/Sep/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 28
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Kolkata
+Date DESTRUCTED : 01/Sep/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 28
+ From Station = Chennai
+ To Station = Kolkata
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Sep/2021
+ Travel Class = AC First Class
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 5452
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 29
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 29
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = General
+ Fare = 3678
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2011
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2011
+BookingCategory SUB-TYPE CONSTRUCTED : Ladies
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2011
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 30
+Date CONSTRUCTED : 01/Jan/1900
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Mumbai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2011
+Date DESTRUCTED : 01/Jan/2011
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 30
+ From Station = Kolkata
+ To Station = Mumbai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = Ladies
+ Fare = 5095
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2011
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2000
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 31
+Date CONSTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 31
+ From Station = Delhi
+ To Station = Mumbai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = Ladies
+ Fare = 3678
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2000
+ Gender = Female / Ms.
+
+Date CONSTRUCTED : 01/Jan/1960
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/1960
+BookingCategory SUB-TYPE CONSTRUCTED : Senior Citizen
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/1960
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 32
+Date CONSTRUCTED : 01/Jan/1900
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/1960
+Date DESTRUCTED : 01/Jan/1960
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 32
+ From Station = Kolkata
+ To Station = Bangalore
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = Senior Citizen
+ Fare = 1734
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/1960
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/1961
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/1961
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Chennai
+Station CONSTRUCTED : Kolkata
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Kolkata
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/1961
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 33
+Date CONSTRUCTED : 01/Jan/1900
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Chennai
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/1961
+Date DESTRUCTED : 01/Jan/1961
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 33
+ From Station = Kolkata
+ To Station = Chennai
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Executive Chair Car
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : Yes
+ Booking Category = Senior Citizen
+ Fare = 2134
+ Name = Jane  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/1961
+ Gender = Female / Ms.
+
+Divyaang SUB-TYPE CONSTRUCTED : Blind
+Divyaang SUB-TYPE CONSTRUCTED : Orthopaedically Handicapped
+Divyaang SUB-TYPE CONSTRUCTED : TB Patients
+Divyaang SUB-TYPE CONSTRUCTED : Cancer Patients
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+BookingCategory SUB-TYPE CONSTRUCTED : Divyaang
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2019
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 34
+Date CONSTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 34
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = Divyaang
+ Fare = 593
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2019
+ Gender = Male / Mr.
+ Disability Type = Blind
+
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2019
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 35
+Date CONSTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 35
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = Divyaang
+ Fare = 593
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2019
+ Gender = Male / Mr.
+ Disability Type = Orthopaedically Handicapped
+
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2019
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 36
+Date CONSTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 36
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = Sleeper
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = Divyaang
+ Fare = 201
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2019
+ Gender = Male / Mr.
+ Disability Type = TB Patients
+
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Mumbai
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 01/Dec/2021
+Date CONSTRUCTED : 01/Jan/2019
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 37
+Date CONSTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 01/Jan/1900
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 37
+ From Station = Mumbai
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 01/Dec/2021
+ Travel Class = First Class
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Booking Category = Divyaang
+ Fare = 593
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2019
+ Gender = Male / Mr.
+ Disability Type = Cancer Patients
+
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+BookingCategory SUB-TYPE CONSTRUCTED : Tatkal
+Date CONSTRUCTED : 10/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 10/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 38
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 10/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 38
+ From Station = Bangalore
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 10/Apr/2021
+ Travel Class = AC 3 Tier
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Booking Category = Tatkal
+ Fare = 3128
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2019
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+BookingCategory SUB-TYPE CONSTRUCTED : Premium Tatkal
+Date CONSTRUCTED : 10/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Bangalore
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Delhi
+Date CONSTRUCTED : 10/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Passenger CONSTRUCTED
+Date CONSTRUCTED : 09/Apr/2021
+Booking CONSTRUCTED : 39
+Date DESTRUCTED : 09/Apr/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 10/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ BOOKING SUCCESSFUL :
+ PNR Number = 39
+ From Station = Bangalore
+ To Station = Delhi
+ Reservation Date = 09/Apr/2021
+ Travel Date = 10/Apr/2021
+ Travel Class = Second Sitting
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Booking Category = Premium Tatkal
+ Fare = 690
+ Name = John  
+ Adhaar Card No. = 123456789012
+ Date of Birth = 01/Jan/2019
+ Gender = Male / Mr.
+
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_Name EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : At least one of the First Name and Last Name must be specified
+
+Bad_Passenger_Name EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_AdhaarNumber EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Adhaar Number must be exactly 12 digits long
+
+Bad_Passenger_AdhaarNumber EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_AdhaarNumber EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Adhaar Number must be exactly 12 digits long
+
+Bad_Passenger_AdhaarNumber EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_AdhaarNumber EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Adhaar Number must only consist of digits
+
+Bad_Passenger_AdhaarNumber EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_MobileNumber EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Mobile Number must be exactly 10 digits long
+
+Bad_Passenger_MobileNumber EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_MobileNumber EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Mobile Number must be exactly 10 digits long
+
+Bad_Passenger_MobileNumber EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Bad_Passenger_MobileNumber EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Mobile Number must only consist of digits
+
+Bad_Passenger_MobileNumber EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2023
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Passenger_DateOfBirth EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2023
+
+ ERROR : Date of Birth can not be in future
+
+Bad_Passenger_DateOfBirth EXCEPTION DESTRUCTED
+Divyaang SUB-TYPE CONSTRUCTED : Invalid
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Passenger_DisabilityType EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Invalid disability type for the Passenger
+
+Bad_Passenger_DisabilityType EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Passenger_Gender EXCEPTION CONSTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Gender must be chosen between Male and Female only
+
+Bad_Passenger_Gender EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Pune
+Station CONSTRUCTED : Mumbai
+Bad_Railways_Distance EXCEPTION CONSTRUCTED
+Bad_Booking_UndefinedTerminals EXCEPTION CONSTRUCTED
+Bad_Railways_Distance EXCEPTION DESTRUCTED
+Bad_Railways_Distance EXCEPTION DESTRUCTED
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Pune
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Terminal stations are not connected in the Railways
+
+Bad_Booking_UndefinedTerminals EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Delhi
+Bad_Railways_Distance EXCEPTION CONSTRUCTED
+Bad_Booking_UndefinedTerminals EXCEPTION CONSTRUCTED
+Bad_Railways_Distance EXCEPTION DESTRUCTED
+Bad_Railways_Distance EXCEPTION DESTRUCTED
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Terminal stations are not connected in the Railways
+
+Bad_Booking_UndefinedTerminals EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 02/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_DateOfBooking EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 02/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Date of booking must be after date of reservation
+
+Bad_Booking_DateOfBooking EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_DateOfBooking EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Date of booking must be after date of reservation
+
+Bad_Booking_DateOfBooking EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Sep/2022
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_DateOfBooking EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Sep/2022
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Date of booking must be within 1 year of date of reservation
+
+Bad_Booking_DateOfBooking EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+BookingClass SUB-TYPE CONSTRUCTED : Invalid
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_BookingClass EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Booking class must be valid
+
+Bad_Booking_BookingClass EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+BookingCategory SUB-TYPE CONSTRUCTED : Invalid
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Delhi
+Station CONSTRUCTED : Mumbai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_BookingCategory EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Booking category must be valid
+
+Bad_Booking_BookingCategory EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2000
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_Passenger EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Jan/2000
+
+ ERROR : Criteria to avail the specified booking category is not satisified for Ladies
+
+Bad_Booking_Passenger EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/1962
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/1962
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_Passenger EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/1962
+Date DESTRUCTED : 01/Jan/1962
+
+ ERROR : Criteria to avail the specified booking category is not satisified for SeniorCitizen
+
+Bad_Booking_Passenger EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/1964
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/1964
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_Passenger EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/1964
+Date DESTRUCTED : 01/Jan/1964
+
+ ERROR : Criteria to avail the specified booking category is not satisified for SeniorCitizen
+
+Bad_Booking_Passenger EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_Passenger EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Criteria to avail the specified booking category is not satisified for Divyaang
+
+Bad_Booking_Passenger EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_Passenger EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Criteria to avail the specified booking category is not satisified for Tatkal
+
+Bad_Booking_Passenger EXCEPTION DESTRUCTED
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 01/Jan/2019
+Date CONSTRUCTED : 01/Dec/2021
+Station CONSTRUCTED : Bangalore
+Station CONSTRUCTED : Chennai
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Date CONSTRUCTED : 09/Apr/2021
+Date DESTRUCTED : 09/Apr/2021
+Bad_Booking_Passenger EXCEPTION CONSTRUCTED
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+Date DESTRUCTED : 01/Dec/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Jan/2019
+
+ ERROR : Criteria to avail the specified booking category is not satisified for PremiumTatkal
+
+Bad_Booking_Passenger EXCEPTION DESTRUCTED
+
+Booking DESTRUCTED : 1
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 2
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 3
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 4
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 5
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 6
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 7
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 8
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 9
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 10
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+
+
+Booking DESTRUCTED : 11
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 12
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Bangalore
+
+
+Booking DESTRUCTED : 13
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 14
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 15
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 16
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Chennai
+
+
+Booking DESTRUCTED : 17
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Delhi
+
+
+Booking DESTRUCTED : 18
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Bangalore
+
+
+Booking DESTRUCTED : 19
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Delhi
+
+
+Booking DESTRUCTED : 20
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 21
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Delhi
+
+
+Booking DESTRUCTED : 22
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Chennai
+
+
+Booking DESTRUCTED : 23
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Bangalore
+
+
+Booking DESTRUCTED : 24
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 25
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Bangalore
+
+
+Booking DESTRUCTED : 26
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Chennai
+
+
+Booking DESTRUCTED : 27
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 28
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Sep/2021
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Chennai
+
+
+Booking DESTRUCTED : 29
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 30
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2011
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 31
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2000
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+
+
+Booking DESTRUCTED : 32
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/1960
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 33
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/1961
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Chennai
+Station DESTRUCTED : Kolkata
+
+
+Booking DESTRUCTED : 34
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 35
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 36
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 37
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 01/Dec/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Mumbai
+
+
+Booking DESTRUCTED : 38
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 10/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Bangalore
+
+
+Booking DESTRUCTED : 39
+Date DESTRUCTED : 09/Apr/2021
+Passenger DESTRUCTED
+Date DESTRUCTED : 01/Jan/2019
+Date DESTRUCTED : 10/Apr/2021
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Bangalore
+
+
+
+	+++ GOODBYE FROM TEST BOOKING APPLICATION +++
+
+	+++ EXITING main +++
+
+BookingCategory SUB-TYPE DESTRUCTED : Invalid
+BookingClass SUB-TYPE DESTRUCTED : Invalid
+Divyaang SUB-TYPE DESTRUCTED : Invalid
+BookingCategory SUB-TYPE DESTRUCTED : Premium Tatkal
+BookingCategory SUB-TYPE DESTRUCTED : Tatkal
+BookingCategory SUB-TYPE DESTRUCTED : Divyaang
+Divyaang SUB-TYPE DESTRUCTED : Cancer Patients
+Divyaang SUB-TYPE DESTRUCTED : TB Patients
+Divyaang SUB-TYPE DESTRUCTED : Orthopaedically Handicapped
+Divyaang SUB-TYPE DESTRUCTED : Blind
+BookingCategory SUB-TYPE DESTRUCTED : Senior Citizen
+BookingCategory SUB-TYPE DESTRUCTED : Ladies
+Gender SUB-TYPE DESTRUCTED : Female
+Railways DESTRUCTED : Indian Railways
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Chennai
+BookingCategory SUB-TYPE DESTRUCTED : General
+Gender SUB-TYPE DESTRUCTED : Male
+BookingClass SUB-TYPE DESTRUCTED : Second Sitting
+BookingClass SUB-TYPE DESTRUCTED : Sleeper
+BookingClass SUB-TYPE DESTRUCTED : AC Chair Car
+BookingClass SUB-TYPE DESTRUCTED : AC 3 Tier
+BookingClass SUB-TYPE DESTRUCTED : First Class
+BookingClass SUB-TYPE DESTRUCTED : AC 2 Tier
+BookingClass SUB-TYPE DESTRUCTED : Executive Chair Car
+BookingClass SUB-TYPE DESTRUCTED : AC First Class
+Station DESTRUCTED : Mumbai
+Station DESTRUCTED : Delhi
+Station DESTRUCTED : Bangalore
+Station DESTRUCTED : Kolkata
+Station DESTRUCTED : Chennai

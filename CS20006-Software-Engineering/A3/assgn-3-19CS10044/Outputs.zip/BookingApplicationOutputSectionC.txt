@@ -1,0 +1,96 @@
+
+ BOOKING SUCCEEDED :
+ PNR Number = 1
+ From Station = Mumbai
+ To Station = Delhi
+ Travel Date = 15/Feb/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 2776
+
+ BOOKING SUCCEEDED :
+ PNR Number = 2
+ From Station = Kolkata
+ To Station = Delhi
+ Travel Date = 05/Mar/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 1522
+
+ BOOKING SUCCEEDED :
+ PNR Number = 3
+ From Station = Mumbai
+ To Station = Kolkata
+ Travel Date = 17/Mar/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 2518
+
+ BOOKING SUCCEEDED :
+ PNR Number = 4
+ From Station = Mumbai
+ To Station = Delhi
+ Travel Date = 23/Mar/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1316
+
+ BOOKING SUCCEEDED :
+ PNR Number = 5
+ From Station = Chennai
+ To Station = Delhi
+ Travel Date = 25/Apr/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1413
+
+ BOOKING SUCCEEDED :
+ PNR Number = 6
+ From Station = Chennai
+ To Station = Kolkata
+ Travel Date = 07/May/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 830
+
+ BOOKING SUCCEEDED :
+ PNR Number = 7
+ From Station = Mumbai
+ To Station = Delhi
+ Travel Date = 19/May/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 362
+
+ BOOKING SUCCEEDED :
+ PNR Number = 8
+ From Station = Delhi
+ To Station = Mumbai
+ Travel Date = 22/May/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 362

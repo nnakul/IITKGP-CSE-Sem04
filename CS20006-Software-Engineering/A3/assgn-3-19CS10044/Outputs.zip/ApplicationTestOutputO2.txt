@@ -1,0 +1,1008 @@
+
+ BOOKING SUCCEEDED :
+ PNR Number = 1
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 14/Dec/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 1279
+
+ BOOKING SUCCEEDED :
+ PNR Number = 2
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 07/Aug/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 454
+
+ BOOKING SUCCEEDED :
+ PNR Number = 3
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 18/May/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 5841
+
+ BOOKING SUCCEEDED :
+ PNR Number = 4
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 27/Apr/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 1279
+
+ BOOKING SUCCEEDED :
+ PNR Number = 5
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 27/Jun/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 1529
+
+ BOOKING SUCCEEDED :
+ PNR Number = 6
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 22/Jun/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 4848
+
+ BOOKING SUCCEEDED :
+ PNR Number = 7
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 14/Oct/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 454
+
+ BOOKING SUCCEEDED :
+ PNR Number = 8
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 22/Sep/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 1529
+
+ BOOKING SUCCEEDED :
+ PNR Number = 9
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 28/Dec/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 5727
+
+ BOOKING SUCCEEDED :
+ PNR Number = 10
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 12/Apr/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 5841
+
+ BOOKING SUCCEEDED :
+ PNR Number = 11
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 24/Oct/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 4848
+
+ BOOKING SUCCEEDED :
+ PNR Number = 12
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 11/Apr/2021
+ Travel Class = AC First Class (1A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 5727
+
+ BOOKING SUCCEEDED :
+ PNR Number = 13
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 13/Nov/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 699
+
+ BOOKING SUCCEEDED :
+ PNR Number = 14
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 06/Sep/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 259
+
+ BOOKING SUCCEEDED :
+ PNR Number = 15
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 07/Sep/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 3132
+
+ BOOKING SUCCEEDED :
+ PNR Number = 16
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 16/Apr/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 699
+
+ BOOKING SUCCEEDED :
+ PNR Number = 17
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 16/Apr/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 832
+
+ BOOKING SUCCEEDED :
+ PNR Number = 18
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 22/Aug/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 2602
+
+ BOOKING SUCCEEDED :
+ PNR Number = 19
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 20/May/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 259
+
+ BOOKING SUCCEEDED :
+ PNR Number = 20
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 12/Jul/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 832
+
+ BOOKING SUCCEEDED :
+ PNR Number = 21
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 04/Oct/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 3071
+
+ BOOKING SUCCEEDED :
+ PNR Number = 22
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 19/Jul/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 3132
+
+ BOOKING SUCCEEDED :
+ PNR Number = 23
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 06/Jun/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 2602
+
+ BOOKING SUCCEEDED :
+ PNR Number = 24
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 22/Nov/2021
+ Travel Class = AC 2 Tier (2A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 2
+ : Luxury : No
+ Fare = 3071
+
+ BOOKING SUCCEEDED :
+ PNR Number = 25
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 02/May/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 811
+
+ BOOKING SUCCEEDED :
+ PNR Number = 26
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 12/Sep/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 261
+
+ BOOKING SUCCEEDED :
+ PNR Number = 27
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 15/Oct/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 3853
+
+ BOOKING SUCCEEDED :
+ PNR Number = 28
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 18/Nov/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 811
+
+ BOOKING SUCCEEDED :
+ PNR Number = 29
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 16/Jul/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 978
+
+ BOOKING SUCCEEDED :
+ PNR Number = 30
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 06/Aug/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 3190
+
+ BOOKING SUCCEEDED :
+ PNR Number = 31
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 25/Jun/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 261
+
+ BOOKING SUCCEEDED :
+ PNR Number = 32
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 15/Oct/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 978
+
+ BOOKING SUCCEEDED :
+ PNR Number = 33
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 09/May/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 3776
+
+ BOOKING SUCCEEDED :
+ PNR Number = 34
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 25/Sep/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 3853
+
+ BOOKING SUCCEEDED :
+ PNR Number = 35
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 01/Aug/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 3190
+
+ BOOKING SUCCEEDED :
+ PNR Number = 36
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 07/Apr/2021
+ Travel Class = First Class (FC)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 2
+ : Luxury : Yes
+ Fare = 3776
+
+ BOOKING SUCCEEDED :
+ PNR Number = 37
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 15/Oct/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 618
+
+ BOOKING SUCCEEDED :
+ PNR Number = 38
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 11/Sep/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 233
+
+ BOOKING SUCCEEDED :
+ PNR Number = 39
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 27/Oct/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 2747
+
+ BOOKING SUCCEEDED :
+ PNR Number = 40
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 06/Jun/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 618
+
+ BOOKING SUCCEEDED :
+ PNR Number = 41
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 02/Sep/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 734
+
+ BOOKING SUCCEEDED :
+ PNR Number = 42
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 05/May/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 2283
+
+ BOOKING SUCCEEDED :
+ PNR Number = 43
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 25/Sep/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 233
+
+ BOOKING SUCCEEDED :
+ PNR Number = 44
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 11/Sep/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 734
+
+ BOOKING SUCCEEDED :
+ PNR Number = 45
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 16/May/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 2693
+
+ BOOKING SUCCEEDED :
+ PNR Number = 46
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 05/Jul/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 2747
+
+ BOOKING SUCCEEDED :
+ PNR Number = 47
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 15/May/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 2283
+
+ BOOKING SUCCEEDED :
+ PNR Number = 48
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 22/May/2021
+ Travel Class = AC 3 Tier (3A)
+ : Mode : Sleeping
+ : Comfort : AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 2693
+
+ BOOKING SUCCEEDED :
+ PNR Number = 49
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 19/Jul/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 456
+
+ BOOKING SUCCEEDED :
+ PNR Number = 50
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 26/Dec/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 181
+
+ BOOKING SUCCEEDED :
+ PNR Number = 51
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 18/Jun/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1976
+
+ BOOKING SUCCEEDED :
+ PNR Number = 52
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 20/Jul/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 456
+
+ BOOKING SUCCEEDED :
+ PNR Number = 53
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 25/Jul/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 539
+
+ BOOKING SUCCEEDED :
+ PNR Number = 54
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 06/Jun/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1645
+
+ BOOKING SUCCEEDED :
+ PNR Number = 55
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 06/Jul/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 181
+
+ BOOKING SUCCEEDED :
+ PNR Number = 56
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 10/Dec/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 539
+
+ BOOKING SUCCEEDED :
+ PNR Number = 57
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 17/May/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1938
+
+ BOOKING SUCCEEDED :
+ PNR Number = 58
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 27/Oct/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1976
+
+ BOOKING SUCCEEDED :
+ PNR Number = 59
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 10/Jul/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1645
+
+ BOOKING SUCCEEDED :
+ PNR Number = 60
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 02/Oct/2021
+ Travel Class = AC Chair Car (CC)
+ : Mode : Sitting
+ : Comfort : AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 1938
+
+ BOOKING SUCCEEDED :
+ PNR Number = 61
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 19/Oct/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 325
+
+ BOOKING SUCCEEDED :
+ PNR Number = 62
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 06/Oct/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 105
+
+ BOOKING SUCCEEDED :
+ PNR Number = 63
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 12/Dec/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1541
+
+ BOOKING SUCCEEDED :
+ PNR Number = 64
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 24/Aug/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 325
+
+ BOOKING SUCCEEDED :
+ PNR Number = 65
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 28/May/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 391
+
+ BOOKING SUCCEEDED :
+ PNR Number = 66
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 23/Nov/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1276
+
+ BOOKING SUCCEEDED :
+ PNR Number = 67
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 02/Nov/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 105
+
+ BOOKING SUCCEEDED :
+ PNR Number = 68
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 23/May/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 391
+
+ BOOKING SUCCEEDED :
+ PNR Number = 69
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 28/Sep/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1511
+
+ BOOKING SUCCEEDED :
+ PNR Number = 70
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 04/Oct/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1541
+
+ BOOKING SUCCEEDED :
+ PNR Number = 71
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 02/Jun/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1276
+
+ BOOKING SUCCEEDED :
+ PNR Number = 72
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 06/Oct/2021
+ Travel Class = Sleeper (SL)
+ : Mode : Sleeping
+ : Comfort : Non-AC
+ : Bunks : 3
+ : Luxury : No
+ Fare = 1511
+
+ BOOKING SUCCEEDED :
+ PNR Number = 73
+ From Station = Amsterdam
+ To Station = Berlin
+ Travel Date = 22/Dec/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 162
+
+ BOOKING SUCCEEDED :
+ PNR Number = 74
+ From Station = Amsterdam
+ To Station = Brussels
+ Travel Date = 10/Jun/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 52
+
+ BOOKING SUCCEEDED :
+ PNR Number = 75
+ From Station = Amsterdam
+ To Station = Athens
+ Travel Date = 02/Jul/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 771
+
+ BOOKING SUCCEEDED :
+ PNR Number = 76
+ From Station = Berlin
+ To Station = Amsterdam
+ Travel Date = 11/Nov/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 162
+
+ BOOKING SUCCEEDED :
+ PNR Number = 77
+ From Station = Berlin
+ To Station = Brussels
+ Travel Date = 11/Nov/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 196
+
+ BOOKING SUCCEEDED :
+ PNR Number = 78
+ From Station = Berlin
+ To Station = Athens
+ Travel Date = 06/Dec/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 638
+
+ BOOKING SUCCEEDED :
+ PNR Number = 79
+ From Station = Brussels
+ To Station = Amsterdam
+ Travel Date = 05/Jun/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 52
+
+ BOOKING SUCCEEDED :
+ PNR Number = 80
+ From Station = Brussels
+ To Station = Berlin
+ Travel Date = 03/Dec/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 196
+
+ BOOKING SUCCEEDED :
+ PNR Number = 81
+ From Station = Brussels
+ To Station = Athens
+ Travel Date = 23/Sep/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 755
+
+ BOOKING SUCCEEDED :
+ PNR Number = 82
+ From Station = Athens
+ To Station = Amsterdam
+ Travel Date = 17/Dec/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 771
+
+ BOOKING SUCCEEDED :
+ PNR Number = 83
+ From Station = Athens
+ To Station = Berlin
+ Travel Date = 17/Jul/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 638
+
+ BOOKING SUCCEEDED :
+ PNR Number = 84
+ From Station = Athens
+ To Station = Brussels
+ Travel Date = 16/Apr/2021
+ Travel Class = Second Sitting (2S)
+ : Mode : Sitting
+ : Comfort : Non-AC
+ : Bunks : 0
+ : Luxury : No
+ Fare = 755
